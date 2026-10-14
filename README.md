@@ -15,9 +15,18 @@ Amazon (tested party) against seven US technology companies: Microsoft, Nvidia, 
 
 Source: U.S. SEC EDGAR XBRL company facts, from each company's Form 10-K. The caveats are listed in the README sheet of the statements file and the Notes sheet of the ratios file.
 
+### 2. EBITDA Multiples
+
+Enterprise value / EBITDA for the same seven comparables, with share prices at 31 December 2025, applied to Amazon's EBITDA to get an implied share price.
+
+| File | Contents |
+|---|---|
+| [Tech Comps - EBITDA Multiples FY2025.xlsx](<Finance/2. EBITDA Multiples/Tech Comps - EBITDA Multiples FY2025.xlsx>) | Market capitalization, net debt, enterprise value, EV / EBITDA and EV / Revenue, and the implied valuation of Amazon |
+
+Sources: U.S. SEC EDGAR for the financials; Yahoo Finance closing prices. This is an illustration of the method, not investment advice.
+
 ### Planned
 
-2. EBITDA Multiples
 3. DCF
 4. LBO
 

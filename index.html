@@ -105,7 +105,7 @@
     <h2>Models</h2>
     <ul class="dash">
       <li><a href="#comparable-company-analysis">1. Comparable Company Analysis</a></li>
-      <li><a href="#ebitda-multiples">2. EBITDA Multiples</a> <span class="status">[in progress]</span></li>
+      <li><a href="#ebitda-multiples">2. EBITDA Multiples</a></li>
       <li><a href="#dcf">3. DCF</a> <span class="status">[in progress]</span></li>
       <li><a href="#lbo">4. LBO</a> <span class="status">[in progress]</span></li>
     </ul>
@@ -158,8 +158,64 @@
 
   <section class="view" id="ebitda-multiples">
     <h1>2. EBITDA Multiples</h1>
-    <p class="sub">Finance</p>
-    <p><span class="status">[in progress]</span> This model is being built.</p>
+    <p class="sub">Finance / US technology sector / prices at 31 December 2025</p>
+
+    <h2>Summary</h2>
+    <dl class="kv">
+      <dt>Target</dt><dd>Amazon</dd>
+      <dt>Comparables</dt><dd>Microsoft, Nvidia, Alphabet, Meta Platforms, Apple, Broadcom, ServiceNow</dd>
+      <dt>Method</dt><dd>Enterprise value / EBITDA of the comparables, applied to Amazon's EBITDA</dd>
+      <dt>Sources</dt><dd>U.S. SEC EDGAR, Form 10-K filings; Yahoo Finance closing prices</dd>
+    </dl>
+
+    <h2>Result</h2>
+    <p class="finding">Amazon trades at 16.8x EBITDA, below the comparables' interquartile range of 23.9x to 42.5x. At the median multiple of 28.5x, the implied share price is USD 388, against an actual price of USD 231.</p>
+    <p class="note">Amazon's business mix (retail, cloud, advertising) differs from the comparables, which are mostly software and semiconductor companies. The implied value illustrates the method; it is not a price target or investment advice.</p>
+
+    <h2>Multiples</h2>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Company</th><th>Enterprise value</th><th>EBITDA</th><th>EBITDA margin</th><th>EV / EBITDA</th><th>EV / Revenue</th></tr>
+        </thead>
+        <tbody>
+          <tr class="tested"><td>Amazon (target)</td><td>2,444,910</td><td>145,731</td><td>20.3%</td><td>16.8x</td><td>3.4x</td></tr>
+          <tr><td>Microsoft</td><td>3,558,809</td><td>156,528</td><td>55.6%</td><td>22.7x</td><td>12.6x</td></tr>
+          <tr><td>Nvidia</td><td>4,569,724</td><td>133,230</td><td>61.7%</td><td>34.3x</td><td>21.2x</td></tr>
+          <tr><td>Alphabet</td><td>3,749,690</td><td>150,175</td><td>37.3%</td><td>25.0x</td><td>9.3x</td></tr>
+          <tr><td>Meta Platforms</td><td>1,676,224</td><td>101,892</td><td>50.7%</td><td>16.5x</td><td>8.3x</td></tr>
+          <tr><td>Apple</td><td>4,123,137</td><td>144,748</td><td>34.8%</td><td>28.5x</td><td>9.9x</td></tr>
+          <tr><td>Broadcom</td><td>1,728,581</td><td>34,120</td><td>53.4%</td><td>50.7x</td><td>27.1x</td></tr>
+          <tr><td>ServiceNow</td><td>155,550</td><td>2,562</td><td>19.3%</td><td>60.7x</td><td>11.7x</td></tr>
+          <tr class="stat first"><td>Comparables: lower quartile</td><td></td><td></td><td>36.0%</td><td>23.9x</td><td>9.6x</td></tr>
+          <tr class="stat"><td>Comparables: median</td><td></td><td></td><td>50.7%</td><td>28.5x</td><td>11.7x</td></tr>
+          <tr class="stat"><td>Comparables: upper quartile</td><td></td><td></td><td>54.5%</td><td>42.5x</td><td>16.9x</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">USD millions. Enterprise value is market capitalization plus debt, less cash and short-term investments. EBITDA is operating income plus depreciation and amortization for each company's fiscal year 2025.</p>
+
+    <h2>Implied valuation of Amazon</h2>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>EV / EBITDA applied</th><th>Lower quartile</th><th>Median</th><th>Upper quartile</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Multiple</td><td>23.9x</td><td>28.5x</td><td>42.5x</td></tr>
+          <tr><td>Implied enterprise value (USD m)</td><td>3,476,029</td><td>4,151,137</td><td>6,190,750</td></tr>
+          <tr><td>Implied equity value (USD m)</td><td>3,530,207</td><td>4,205,315</td><td>6,244,928</td></tr>
+          <tr class="tested"><td>Implied share price (USD)</td><td>326.06</td><td>388.41</td><td>576.79</td></tr>
+          <tr><td>Actual share price, 31 Dec 2025 (USD)</td><td>230.82</td><td>230.82</td><td>230.82</td></tr>
+          <tr><td>Implied against actual</td><td>+41.3%</td><td>+68.3%</td><td>+149.9%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Files</h2>
+    <p class="files">
+      <a href="Finance/2.%20EBITDA%20Multiples/Tech%20Comps%20-%20EBITDA%20Multiples%20FY2025.xlsx" download>EBITDA Multiples FY2025.xlsx</a>
+    </p>
   </section>
 
   <section class="view" id="dcf">
