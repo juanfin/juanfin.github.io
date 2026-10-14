@@ -35,9 +35,15 @@ Discounted cash flow valuation of Amazon at 31 December 2025: five projected yea
 
 The projection assumptions are the author's own. This is an illustration of the method, not investment advice.
 
-### Planned
+### 4. LBO
 
-4. LBO
+Hypothetical leveraged buyout of Dropbox at 31 December 2025: purchase price, sources and uses, five-year projection with a cash sweep on the term loan, and the sponsor's IRR and MOIC with a sensitivity table.
+
+| File | Contents |
+|---|---|
+| [Dropbox - LBO Model FY2025.xlsx](<Finance/4. LBO/Dropbox - LBO Model FY2025.xlsx>) | Transaction assumptions, sources and uses, projections, debt schedule, returns and sensitivity |
+
+The transaction and its assumptions are the author's own illustration, not a real or proposed deal.
 
 ## Economics
 
