@@ -4,142 +4,224 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Juan Sebastián Ramírez Diaz | Financial Portfolio</title>
-<meta name="description" content="Financial and economic models built from public data: comparable company analysis, valuation and macroeconomic indicators.">
+<meta name="description" content="Models and charts on economics and finance, built from public data.">
 <style>
-  :root {
-    --ink: #1c1c1a; --muted: #62625c; --line: #dcdcd4; --paper: #fbfaf6; --card: #ffffff;
-    --accent: #2f5d50; --tested: #f3efe0;
-  }
+  :root { --bg: #0a0a0a; --ink: #d6d6d6; --bright: #ffffff; --muted: #8b8b8b; --line: #2a2a2a;
+          --accent: #f5a623; --row: #151515; }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--paper); color: var(--ink);
-         font: 17px/1.6 Georgia, "Times New Roman", serif; }
-  .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
-  header { border-bottom: 1px solid var(--line); }
-  nav { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: baseline; padding: 18px 0;
-        font: 14px/1.4 "Segoe UI", Helvetica, Arial, sans-serif; }
-  nav .name { font-weight: 600; margin-right: auto; }
-  nav a { color: var(--muted); text-decoration: none; }
-  nav a:hover { color: var(--accent); }
-  .hero { padding: 64px 0 40px; }
-  h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1.15; margin: 0 0 8px; font-weight: 400; }
-  .role { font: 15px/1.4 "Segoe UI", Helvetica, Arial, sans-serif; color: var(--accent);
-          letter-spacing: .06em; text-transform: uppercase; margin: 0 0 24px; }
-  .hero p.lead { max-width: 68ch; margin: 0; }
-  section { padding: 40px 0; border-top: 1px solid var(--line); }
-  h2 { font-size: 26px; font-weight: 400; margin: 0 0 6px; }
-  h3 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
-  .kicker { font: 13px/1.4 "Segoe UI", Helvetica, Arial, sans-serif; color: var(--muted);
-            letter-spacing: .06em; text-transform: uppercase; margin: 0 0 20px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 24px; }
-  .card p { max-width: 70ch; }
-  .finding { border-left: 3px solid var(--accent); padding: 2px 0 2px 16px; margin: 18px 0; }
-  .scroll { overflow-x: auto; margin: 18px 0 6px; }
-  table { border-collapse: collapse; width: 100%; min-width: 560px;
-          font: 14.5px/1.4 "Segoe UI", Helvetica, Arial, sans-serif; font-variant-numeric: tabular-nums; }
-  th, td { padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 16px/1.65 Consolas, "Cascadia Mono", "DejaVu Sans Mono", Menlo, monospace; }
+  a { color: inherit; }
+  .layout { max-width: 1280px; margin: 0 auto; padding: 56px 24px 80px;
+            display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 48px; }
+
+  /* left: folder tree */
+  .tree { position: sticky; top: 56px; align-self: start; white-space: pre; font-size: 16px; line-height: 2; }
+  .tree .g { color: var(--muted); }
+  .tree a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line);
+            text-underline-offset: 5px; }
+  .tree a:hover { color: var(--bright); text-decoration-color: var(--muted); }
+  .tree a.dir { color: var(--bright); font-size: 18px; }
+  .tree a.active { color: var(--bright); text-decoration-color: var(--accent); }
+  .tree a.active::after { content: "  \25C4"; color: var(--accent); }
+
+  /* right: content */
+  main { min-width: 0; }
+  .view { display: none; }
+  .view.on { display: block; }
+  h1 { color: var(--bright); font-size: 30px; line-height: 1.25; margin: 0 0 10px; }
+  .sub { color: var(--muted); margin: 0 0 36px; }
+  h2 { color: var(--bright); font-size: 21px; margin: 40px 0 16px; }
+  h2::before { content: "## "; color: var(--muted); }
+  p { max-width: 74ch; margin: 0 0 16px; }
+  .kv { display: grid; grid-template-columns: 150px 1fr; gap: 8px 16px; margin: 0; }
+  .kv dt { color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .kv dd { margin: 0; color: var(--bright); }
+  ul.dash { list-style: none; padding: 0; margin: 0; }
+  ul.dash li { padding-left: 2ch; text-indent: -2ch; margin-bottom: 6px; }
+  ul.dash li::before { content: "- "; color: var(--muted); }
+  ul.dash a { text-decoration-color: var(--muted); text-underline-offset: 4px; }
+  ul.dash a:hover { color: var(--bright); }
+  .status { color: var(--accent); }
+  .finding { border-left: 2px solid var(--accent); padding-left: 16px; color: var(--bright); }
+  .scroll { overflow-x: auto; margin: 8px 0 14px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+  th, td { padding: 7px 7px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
   th:first-child, td:first-child { text-align: left; }
-  thead th { font-weight: 600; border-bottom: 2px solid var(--ink); }
-  tr.tested td { background: var(--tested); font-weight: 600; }
+  thead th { color: var(--muted); font-weight: normal; text-transform: uppercase; letter-spacing: .04em;
+             border-bottom: 1px solid var(--muted); }
+  tr.tested td { color: var(--accent); background: var(--row); }
   tr.stat td { color: var(--muted); }
-  tr.stat.first td { border-top: 2px solid var(--ink); }
-  .note { font: 13.5px/1.5 "Segoe UI", Helvetica, Arial, sans-serif; color: var(--muted); }
-  .files { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-  .btn { font: 14px/1 "Segoe UI", Helvetica, Arial, sans-serif; text-decoration: none; color: var(--accent);
-         border: 1px solid var(--accent); border-radius: 4px; padding: 10px 14px; }
-  .btn:hover { background: var(--accent); color: #fff; }
-  .planned { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px;
-             margin: 18px 0 0; padding: 0; list-style: none; }
-  .planned li { border: 1px dashed var(--line); border-radius: 6px; padding: 14px 16px;
-                font: 15px/1.4 "Segoe UI", Helvetica, Arial, sans-serif; }
-  .planned span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
-  footer { border-top: 1px solid var(--line); padding: 24px 0 40px; }
-  footer a { color: var(--accent); }
+  tr.stat.first td { border-top: 1px solid var(--muted); }
+  .note { color: var(--muted); font-size: 14px; }
+  .files a { display: inline-block; margin: 6px 14px 0 0; color: var(--bright);
+             text-decoration-color: var(--accent); text-underline-offset: 5px; }
+  .files a::before { content: "\2193  "; color: var(--accent); }
+
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-top: 32px; }
+    .tree { position: static; font-size: 14.5px; overflow-x: auto; }
+    .tree a.dir { font-size: 16px; }
+    h1 { font-size: 24px; }
+    .kv { grid-template-columns: 1fr; gap: 0; }
+    .kv dd { margin-bottom: 10px; }
+  }
 </style>
 </head>
 <body>
+<div class="layout">
 
-<header>
-  <div class="wrap">
-    <nav>
-      <span class="name">Juan Sebastián Ramírez Diaz</span>
-      <a href="#profile">Profile</a>
-      <a href="#finance">Finance</a>
-      <a href="#economics">Economics</a>
-    </nav>
-  </div>
-</header>
+<nav class="tree" aria-label="Portfolio contents"><a class="dir" href="#home">portfolio</a> <span class="g">/</span>
+<span class="g">├── </span><a class="dir" href="#finance">Finance</a> <span class="g">/</span>
+<span class="g">│   ├── </span><a href="#comparable-company-analysis">1. Comparable Company Analysis</a>
+<span class="g">│   ├── </span><a href="#ebitda-multiples">2. EBITDA Multiples</a>
+<span class="g">│   ├── </span><a href="#dcf">3. DCF</a>
+<span class="g">│   └── </span><a href="#lbo">4. LBO</a>
+<span class="g">└── </span><a class="dir" href="#economics">Economics</a> <span class="g">/</span>
+<span class="g">    ├── </span><a href="#phillips-curve">1. Phillips Curve</a>
+<span class="g">    ├── </span><a href="#gini-and-lorenz-curve">2. Gini and Lorenz Curve</a>
+<span class="g">    └── </span><a href="#historical-indicators">3. Historical Indicators</a>
+</nav>
 
-<main class="wrap">
+<main>
 
-  <div class="hero" id="profile">
-    <h1>Financial Portfolio</h1>
-    <p class="role">Economist · Finance and macroeconomics</p>
-    <p class="lead">Economist with an emphasis in finance and macroeconomics. I have worked in transfer pricing and financial advisory at Deloitte and Andersen, and in macroeconomic research at Banco de la República, Colombia's central bank. My main interest is financial modelling: valuing companies through comparable analysis, EBITDA multiples and discounted cash flow, and reading those results against the macroeconomic picture of inflation, interest rates and employment. This portfolio collects the models and charts I build to practise both sides.</p>
-  </div>
+  <section class="view" id="home">
+    <h1>Juan Sebastián Ramírez Diaz | Financial Portfolio</h1>
+    <p class="sub">Models and charts on economics and finance, built from public data.</p>
 
-  <section id="finance">
-    <h2>Finance</h2>
-    <p class="kicker">Company analysis and valuation</p>
+    <h2>Profile</h2>
+    <p>Economist with an emphasis in macroeconomics and finance, with experience in consulting and specialized research. This portfolio collects the models and charts I build on economics and finance.</p>
 
-    <div class="card">
-      <h3>1. Comparable Company Analysis</h3>
-      <p>Amazon, as the tested party, against seven large US technology companies for fiscal year 2025. The analysis compares four profitability ratios and places Amazon against the interquartile range of the comparable set.</p>
-
-      <p class="finding">Amazon sits below the interquartile range on all four ratios. Its operating margin of 11.2% compares with a median of 39.9% for the comparables.</p>
-
-      <div class="scroll">
-        <table>
-          <thead>
-            <tr><th>Company</th><th>Fiscal year end</th><th>Gross margin</th><th>Operating margin</th><th>ROA</th><th>ROE</th></tr>
-          </thead>
-          <tbody>
-            <tr class="tested"><td>Amazon (tested party)</td><td>31 Dec 2025</td><td>50.3%</td><td>11.2%</td><td>9.5%</td><td>18.9%</td></tr>
-            <tr><td>Microsoft</td><td>30 Jun 2025</td><td>68.8%</td><td>45.6%</td><td>16.5%</td><td>29.6%</td></tr>
-            <tr><td>Nvidia</td><td>25 Jan 2026</td><td>71.1%</td><td>60.4%</td><td>58.1%</td><td>76.3%</td></tr>
-            <tr><td>Alphabet</td><td>31 Dec 2025</td><td>59.7%</td><td>32.0%</td><td>22.2%</td><td>31.8%</td></tr>
-            <tr><td>Meta Platforms</td><td>31 Dec 2025</td><td>82.0%</td><td>41.4%</td><td>16.5%</td><td>27.8%</td></tr>
-            <tr><td>Apple</td><td>27 Sep 2025</td><td>46.9%</td><td>32.0%</td><td>31.2%</td><td>151.9%</td></tr>
-            <tr><td>Broadcom</td><td>2 Nov 2025</td><td>67.8%</td><td>39.9%</td><td>13.5%</td><td>28.4%</td></tr>
-            <tr><td>ServiceNow</td><td>31 Dec 2025</td><td>77.5%</td><td>13.7%</td><td>6.7%</td><td>13.5%</td></tr>
-            <tr class="stat first"><td>Comparables: lower quartile</td><td></td><td>63.7%</td><td>32.0%</td><td>15.0%</td><td>28.1%</td></tr>
-            <tr class="stat"><td>Comparables: median</td><td></td><td>68.8%</td><td>39.9%</td><td>16.5%</td><td>29.6%</td></tr>
-            <tr class="stat"><td>Comparables: upper quartile</td><td></td><td>74.3%</td><td>43.5%</td><td>26.7%</td><td>54.1%</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note">ROA and ROE use year-end balances. Each company's own fiscal year 2025 is used; for Nvidia, the year ended January 2026, which covers 11 months of calendar 2025. Amazon's gross profit is revenue less cost of sales. Source: U.S. SEC EDGAR, Form 10-K filings.</p>
-
-      <div class="files">
-        <a class="btn" href="Finance/1.%20Comparable%20Company%20Analysis/Tech%20Comps%20-%20Profitability%20Ratios%20FY2025.xlsx" download>Download the ratios (Excel)</a>
-        <a class="btn" href="Finance/1.%20Comparable%20Company%20Analysis/Tech%20Comps%20-%20Financial%20Statements%20FY2025.xlsx" download>Download the financial statements (Excel)</a>
-      </div>
-    </div>
-
-    <ul class="planned">
-      <li>2. EBITDA Multiples<span>In progress</span></li>
-      <li>3. DCF<span>In progress</span></li>
-      <li>4. LBO<span>In progress</span></li>
+    <h2>Contents</h2>
+    <ul class="dash">
+      <li><a href="#finance">Finance</a>: company analysis and valuation models</li>
+      <li><a href="#economics">Economics</a>: macroeconomic indicators and charts</li>
     </ul>
   </section>
 
-  <section id="economics">
-    <h2>Economics</h2>
-    <p class="kicker">Macroeconomic indicators and charts</p>
-    <ul class="planned">
-      <li>1. Phillips Curve<span>In progress</span></li>
-      <li>2. Gini and Lorenz Curve<span>In progress</span></li>
-      <li>3. Historical Indicators<span>Inflation, interest rate, unemployment, population. In progress</span></li>
+  <section class="view" id="finance">
+    <h1>Finance</h1>
+    <p class="sub">Company analysis and valuation models.</p>
+    <h2>Models</h2>
+    <ul class="dash">
+      <li><a href="#comparable-company-analysis">1. Comparable Company Analysis</a></li>
+      <li><a href="#ebitda-multiples">2. EBITDA Multiples</a> <span class="status">[in progress]</span></li>
+      <li><a href="#dcf">3. DCF</a> <span class="status">[in progress]</span></li>
+      <li><a href="#lbo">4. LBO</a> <span class="status">[in progress]</span></li>
     </ul>
+  </section>
+
+  <section class="view" id="comparable-company-analysis">
+    <h1>1. Comparable Company Analysis</h1>
+    <p class="sub">Finance / US technology sector / fiscal year 2025</p>
+
+    <h2>Summary</h2>
+    <dl class="kv">
+      <dt>Tested party</dt><dd>Amazon</dd>
+      <dt>Comparables</dt><dd>Microsoft, Nvidia, Alphabet, Meta Platforms, Apple, Broadcom, ServiceNow</dd>
+      <dt>Ratios</dt><dd>Gross margin, operating margin, ROA, ROE</dd>
+      <dt>Source</dt><dd>U.S. SEC EDGAR, Form 10-K filings</dd>
+    </dl>
+
+    <h2>Result</h2>
+    <p class="finding">Amazon sits below the interquartile range of the comparables on all four ratios. Its operating margin of 11.2% compares with a median of 39.9%.</p>
+
+    <h2>Ratios</h2>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Company</th><th>FY end</th><th>Gross margin</th><th>Operating margin</th><th>ROA</th><th>ROE</th></tr>
+        </thead>
+        <tbody>
+          <tr class="tested"><td>Amazon (tested party)</td><td>31 Dec 2025</td><td>50.3%</td><td>11.2%</td><td>9.5%</td><td>18.9%</td></tr>
+          <tr><td>Microsoft</td><td>30 Jun 2025</td><td>68.8%</td><td>45.6%</td><td>16.5%</td><td>29.6%</td></tr>
+          <tr><td>Nvidia</td><td>25 Jan 2026</td><td>71.1%</td><td>60.4%</td><td>58.1%</td><td>76.3%</td></tr>
+          <tr><td>Alphabet</td><td>31 Dec 2025</td><td>59.7%</td><td>32.0%</td><td>22.2%</td><td>31.8%</td></tr>
+          <tr><td>Meta Platforms</td><td>31 Dec 2025</td><td>82.0%</td><td>41.4%</td><td>16.5%</td><td>27.8%</td></tr>
+          <tr><td>Apple</td><td>27 Sep 2025</td><td>46.9%</td><td>32.0%</td><td>31.2%</td><td>151.9%</td></tr>
+          <tr><td>Broadcom</td><td>2 Nov 2025</td><td>67.8%</td><td>39.9%</td><td>13.5%</td><td>28.4%</td></tr>
+          <tr><td>ServiceNow</td><td>31 Dec 2025</td><td>77.5%</td><td>13.7%</td><td>6.7%</td><td>13.5%</td></tr>
+          <tr class="stat first"><td>Comparables: lower quartile</td><td></td><td>63.7%</td><td>32.0%</td><td>15.0%</td><td>28.1%</td></tr>
+          <tr class="stat"><td>Comparables: median</td><td></td><td>68.8%</td><td>39.9%</td><td>16.5%</td><td>29.6%</td></tr>
+          <tr class="stat"><td>Comparables: upper quartile</td><td></td><td>74.3%</td><td>43.5%</td><td>26.7%</td><td>54.1%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">ROA and ROE use year-end balances. Each company's own fiscal year 2025 is used; for Nvidia, the year ended January 2026, which covers 11 months of calendar 2025. Amazon's gross profit is revenue less cost of sales.</p>
+
+    <h2>Files</h2>
+    <p class="files">
+      <a href="Finance/1.%20Comparable%20Company%20Analysis/Tech%20Comps%20-%20Profitability%20Ratios%20FY2025.xlsx" download>Profitability Ratios FY2025.xlsx</a>
+      <a href="Finance/1.%20Comparable%20Company%20Analysis/Tech%20Comps%20-%20Financial%20Statements%20FY2025.xlsx" download>Financial Statements FY2025.xlsx</a>
+    </p>
+  </section>
+
+  <section class="view" id="ebitda-multiples">
+    <h1>2. EBITDA Multiples</h1>
+    <p class="sub">Finance</p>
+    <p><span class="status">[in progress]</span> This model is being built.</p>
+  </section>
+
+  <section class="view" id="dcf">
+    <h1>3. DCF</h1>
+    <p class="sub">Finance / discounted cash flow</p>
+    <p><span class="status">[in progress]</span> This model is being built.</p>
+  </section>
+
+  <section class="view" id="lbo">
+    <h1>4. LBO</h1>
+    <p class="sub">Finance / leveraged buyout</p>
+    <p><span class="status">[in progress]</span> This model is being built.</p>
+  </section>
+
+  <section class="view" id="economics">
+    <h1>Economics</h1>
+    <p class="sub">Macroeconomic indicators and charts.</p>
+    <h2>Models</h2>
+    <ul class="dash">
+      <li><a href="#phillips-curve">1. Phillips Curve</a> <span class="status">[in progress]</span></li>
+      <li><a href="#gini-and-lorenz-curve">2. Gini and Lorenz Curve</a> <span class="status">[in progress]</span></li>
+      <li><a href="#historical-indicators">3. Historical Indicators</a> <span class="status">[in progress]</span></li>
+    </ul>
+  </section>
+
+  <section class="view" id="phillips-curve">
+    <h1>1. Phillips Curve</h1>
+    <p class="sub">Economics / inflation and unemployment</p>
+    <p><span class="status">[in progress]</span> This chart is being built.</p>
+  </section>
+
+  <section class="view" id="gini-and-lorenz-curve">
+    <h1>2. Gini and Lorenz Curve</h1>
+    <p class="sub">Economics / income distribution</p>
+    <p><span class="status">[in progress]</span> This chart is being built.</p>
+  </section>
+
+  <section class="view" id="historical-indicators">
+    <h1>3. Historical Indicators</h1>
+    <p class="sub">Economics / inflation, interest rate, unemployment, population</p>
+    <p><span class="status">[in progress]</span> These charts are being built.</p>
   </section>
 
 </main>
+</div>
 
-<footer>
-  <div class="wrap note">
-    Models and data files are on <a href="https://github.com/Juan26-Fin">GitHub</a>.
-  </div>
-</footer>
-
+<script>
+  // Show the section named in the address (#dcf, #finance, ...) and mark it in the tree.
+  function show(e) {
+    var id = location.hash.slice(1);
+    if (!document.getElementById(id)) id = "home";
+    document.querySelectorAll(".view").forEach(function (s) { s.classList.toggle("on", s.id === id); });
+    document.querySelectorAll(".tree a").forEach(function (a) {
+      a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+    });
+    var stacked = window.matchMedia("(max-width: 900px)").matches;
+    if (e && stacked) document.querySelector("main").scrollIntoView();
+    else window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", show);
+  show(null);
+</script>
+<noscript><style>.view { display: block; margin-bottom: 64px; }</style></noscript>
 </body>
 </html>
