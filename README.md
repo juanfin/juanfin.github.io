@@ -57,7 +57,16 @@ Inflation against unemployment in Colombia, 2001 to 2025: annual averages of DAN
 
 Source: DANE, retrieved from the Banco de la República statistical catalogue.
 
+### 2. Gini and Lorenz Curve
+
+Distribution of income in Colombia: Lorenz curve and Gini coefficient for 2024 built from income deciles, and the Gini coefficient from 2012 to 2025.
+
+| File | Contents |
+|---|---|
+| [Colombia - Gini and Lorenz Curve 2024.xlsx](<Economics/2. Gini and Lorenz Curve/Colombia - Gini and Lorenz Curve 2024.xlsx>) | Decile shares, Lorenz curve with chart, Gini by the trapezoid rule, inequality ratios, and deciles by year |
+
+Sources: World Bank Poverty and Inequality Platform, and DANE.
+
 ### Planned
 
-2. Gini and Lorenz Curve
 3. Historical Indicators

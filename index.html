@@ -626,7 +626,7 @@
     <h2>Models</h2>
     <ul class="dash">
       <li><a href="#phillips-curve">1. Phillips Curve</a></li>
-      <li><a href="#gini-and-lorenz-curve">2. Gini and Lorenz Curve</a> <span class="status">[in progress]</span></li>
+      <li><a href="#gini-and-lorenz-curve">2. Gini and Lorenz Curve</a></li>
       <li><a href="#historical-indicators">3. Historical Indicators</a> <span class="status">[in progress]</span></li>
     </ul>
   </section>
@@ -773,8 +773,206 @@
 
   <section class="view" id="gini-and-lorenz-curve">
     <h1>2. Gini and Lorenz Curve</h1>
-    <p class="sub">Economics / income distribution</p>
-    <p><span class="status">[in progress]</span> This chart is being built.</p>
+    <p class="sub">Economics / income distribution / Colombia, 2024</p>
+
+    <h2>Objective</h2>
+    <p>The objective of this analysis is to measure how income is distributed among the population of Colombia, by building the Lorenz curve and the Gini coefficient for 2024, and to verify whether inequality has decreased in recent years.</p>
+
+    <h2>Method</h2>
+    <p>The population was ordered from the lowest to the highest income per person and divided into ten groups of equal size (deciles). The Lorenz curve shows the cumulative share of income received by each cumulative share of the population. If every person received the same income, the curve would be a straight line, the line of equality.</p>
+    <p>The Gini coefficient is the area between the line of equality and the Lorenz curve, divided by the whole area under the line of equality. It goes from 0, full equality, to 1, full inequality.</p>
+    <dl class="kv">
+      <dt>Country</dt><dd>Colombia, national total</dd>
+      <dt>Variable</dt><dd>Income per person, from DANE's household survey (GEIH)</dd>
+      <dt>Period</dt><dd>Lorenz curve for 2024; Gini coefficient from 2012 to 2025</dd>
+      <dt>Sources</dt><dd>World Bank, Poverty and Inequality Platform; DANE</dd>
+    </dl>
+
+    <h2>Results</h2>
+    <h3><span>Figure 1.</span> Lorenz curve of income, 2024</h3>
+    <figure>
+<svg viewBox="0 0 520 500" role="img" aria-label="Lorenz curve of income in Colombia, 2024" style="width:100%;height:auto;max-width:520px;font-family:inherit">
+<line x1="58" x2="504" y1="450.0" y2="450.0" stroke="var(--line)"/>
+<line x1="58.0" x2="58.0" y1="14" y2="450" stroke="var(--line)"/>
+<text x="50" y="454.0" text-anchor="end" font-size="12" fill="var(--muted)">0%</text>
+<text x="58.0" y="468" text-anchor="middle" font-size="12" fill="var(--muted)">0%</text>
+<line x1="58" x2="504" y1="362.8" y2="362.8" stroke="var(--line)"/>
+<line x1="147.2" x2="147.2" y1="14" y2="450" stroke="var(--line)"/>
+<text x="50" y="366.8" text-anchor="end" font-size="12" fill="var(--muted)">20%</text>
+<text x="147.2" y="468" text-anchor="middle" font-size="12" fill="var(--muted)">20%</text>
+<line x1="58" x2="504" y1="275.6" y2="275.6" stroke="var(--line)"/>
+<line x1="236.4" x2="236.4" y1="14" y2="450" stroke="var(--line)"/>
+<text x="50" y="279.6" text-anchor="end" font-size="12" fill="var(--muted)">40%</text>
+<text x="236.4" y="468" text-anchor="middle" font-size="12" fill="var(--muted)">40%</text>
+<line x1="58" x2="504" y1="188.4" y2="188.4" stroke="var(--line)"/>
+<line x1="325.6" x2="325.6" y1="14" y2="450" stroke="var(--line)"/>
+<text x="50" y="192.4" text-anchor="end" font-size="12" fill="var(--muted)">60%</text>
+<text x="325.6" y="468" text-anchor="middle" font-size="12" fill="var(--muted)">60%</text>
+<line x1="58" x2="504" y1="101.2" y2="101.2" stroke="var(--line)"/>
+<line x1="414.8" x2="414.8" y1="14" y2="450" stroke="var(--line)"/>
+<text x="50" y="105.2" text-anchor="end" font-size="12" fill="var(--muted)">80%</text>
+<text x="414.8" y="468" text-anchor="middle" font-size="12" fill="var(--muted)">80%</text>
+<line x1="58" x2="504" y1="14.0" y2="14.0" stroke="var(--line)"/>
+<line x1="504.0" x2="504.0" y1="14" y2="450" stroke="var(--line)"/>
+<text x="50" y="18.0" text-anchor="end" font-size="12" fill="var(--muted)">100%</text>
+<text x="504.0" y="468" text-anchor="middle" font-size="12" fill="var(--muted)">100%</text>
+<polygon points="58.0,450.0 58.0,450.0 102.6,445.5 147.2,436.1 191.8,422.7 236.4,405.2 281.0,383.1 325.6,354.9 370.2,318.8 414.8,270.7 459.4,200.3 504.0,14.0 504.0,14.0" fill="var(--accent)" fill-opacity="0.14"/>
+<line x1="58.0" y1="450.0" x2="504.0" y2="14.0" stroke="var(--muted)" stroke-dasharray="6 4"/>
+<polyline points="58.0,450.0 102.6,445.5 147.2,436.1 191.8,422.7 236.4,405.2 281.0,383.1 325.6,354.9 370.2,318.8 414.8,270.7 459.4,200.3 504.0,14.0" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+<circle cx="102.6" cy="445.5" r="3.5" fill="var(--accent)"><title>Poorest 10% of the population: 1.0% of income</title></circle>
+<circle cx="147.2" cy="436.1" r="3.5" fill="var(--accent)"><title>Poorest 20% of the population: 3.2% of income</title></circle>
+<circle cx="191.8" cy="422.7" r="3.5" fill="var(--accent)"><title>Poorest 30% of the population: 6.3% of income</title></circle>
+<circle cx="236.4" cy="405.2" r="3.5" fill="var(--accent)"><title>Poorest 40% of the population: 10.3% of income</title></circle>
+<circle cx="281.0" cy="383.1" r="3.5" fill="var(--accent)"><title>Poorest 50% of the population: 15.3% of income</title></circle>
+<circle cx="325.6" cy="354.9" r="3.5" fill="var(--accent)"><title>Poorest 60% of the population: 21.8% of income</title></circle>
+<circle cx="370.2" cy="318.8" r="3.5" fill="var(--accent)"><title>Poorest 70% of the population: 30.1% of income</title></circle>
+<circle cx="414.8" cy="270.7" r="3.5" fill="var(--accent)"><title>Poorest 80% of the population: 41.1% of income</title></circle>
+<circle cx="459.4" cy="200.3" r="3.5" fill="var(--accent)"><title>Poorest 90% of the population: 57.3% of income</title></circle>
+<text x="236.4" y="245.1" font-size="12" fill="var(--muted)" text-anchor="end">line of equality</text>
+<text x="289.0" y="399.1" font-size="12" fill="var(--ink)">poorest 50%: 15.3% of income</text>
+<text x="449.4" y="194.3" font-size="12" fill="var(--ink)" text-anchor="end">poorest 90%: 57.3%</text>
+<text x="325.6" y="266.9" font-size="12" fill="var(--accent)" text-anchor="middle">area = inequality</text>
+<text x="281" y="492" text-anchor="middle" font-size="12" fill="var(--muted)">Cumulative share of population, poorest to richest</text>
+<text transform="translate(14 232) rotate(-90)" text-anchor="middle" font-size="12" fill="var(--muted)">Cumulative share of income</text>
+</svg>
+    </figure>
+    <p class="calc">Calculations: own, from the World Bank. The shaded area between the line of equality and the curve is what the Gini coefficient measures.</p>
+
+    <h3><span>Table 1.</span> Distribution of income by decile, 2024</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Decile of the population</th><th>Share of income</th><th>Cumulative income</th><th>Cumulative population</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1 (poorest 10%)</td><td>1.03%</td><td>1.03%</td><td>10%</td></tr>
+          <tr><td>2</td><td>2.16%</td><td>3.19%</td><td>20%</td></tr>
+          <tr><td>3</td><td>3.07%</td><td>6.26%</td><td>30%</td></tr>
+          <tr><td>4</td><td>4.01%</td><td>10.27%</td><td>40%</td></tr>
+          <tr><td>5</td><td>5.08%</td><td>15.35%</td><td>50%</td></tr>
+          <tr><td>6</td><td>6.46%</td><td>21.81%</td><td>60%</td></tr>
+          <tr><td>7</td><td>8.28%</td><td>30.09%</td><td>70%</td></tr>
+          <tr><td>8</td><td>11.04%</td><td>41.13%</td><td>80%</td></tr>
+          <tr><td>9</td><td>16.13%</td><td>57.26%</td><td>90%</td></tr>
+          <tr class="tested"><td>10 (richest 10%)</td><td>42.75%</td><td>100.00%</td><td>100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="calc">Source: World Bank, Poverty and Inequality Platform. Cumulative income: own calculation.</p>
+
+    <h3><span>Table 2.</span> Indicators of inequality, 2024</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Indicator</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+          <tr class="tested"><td>Gini coefficient, reported by the World Bank</td><td>0.544</td></tr>
+          <tr><td>Gini coefficient, calculated from the ten deciles</td><td>0.527</td></tr>
+          <tr><td>Income share of the poorest 50%</td><td>15.3%</td></tr>
+          <tr><td>Income share of the richest 20%</td><td>58.9%</td></tr>
+          <tr><td>Income share of the richest 10%</td><td>42.8%</td></tr>
+          <tr><td>Income of the richest 10% / income of the poorest 10%</td><td>41.5 times</td></tr>
+          <tr><td>Palma ratio: richest 10% / poorest 40%</td><td>4.16</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own, from the World Bank. The Gini from deciles is lower than the reported one because ten groups hide the inequality inside each decile.</p>
+
+    <h3><span>Figure 2.</span> Gini coefficient, 2012 to 2025</h3>
+    <figure>
+<svg viewBox="0 0 760 300" role="img" aria-label="Gini coefficient of Colombia, 2012 to 2025" style="width:100%;height:auto;max-width:760px;font-family:inherit">
+<line x1="56" x2="736" y1="260.0" y2="260.0" stroke="var(--line)"/>
+<text x="48" y="264.0" text-anchor="end" font-size="12" fill="var(--muted)">0.50</text>
+<line x1="56" x2="736" y1="225.1" y2="225.1" stroke="var(--line)"/>
+<text x="48" y="229.1" text-anchor="end" font-size="12" fill="var(--muted)">0.51</text>
+<line x1="56" x2="736" y1="190.3" y2="190.3" stroke="var(--line)"/>
+<text x="48" y="194.3" text-anchor="end" font-size="12" fill="var(--muted)">0.52</text>
+<line x1="56" x2="736" y1="155.4" y2="155.4" stroke="var(--line)"/>
+<text x="48" y="159.4" text-anchor="end" font-size="12" fill="var(--muted)">0.53</text>
+<line x1="56" x2="736" y1="120.6" y2="120.6" stroke="var(--line)"/>
+<text x="48" y="124.6" text-anchor="end" font-size="12" fill="var(--muted)">0.54</text>
+<line x1="56" x2="736" y1="85.7" y2="85.7" stroke="var(--line)"/>
+<text x="48" y="89.7" text-anchor="end" font-size="12" fill="var(--muted)">0.55</text>
+<line x1="56" x2="736" y1="50.9" y2="50.9" stroke="var(--line)"/>
+<text x="48" y="54.9" text-anchor="end" font-size="12" fill="var(--muted)">0.56</text>
+<line x1="56" x2="736" y1="16.0" y2="16.0" stroke="var(--line)"/>
+<text x="48" y="20.0" text-anchor="end" font-size="12" fill="var(--muted)">0.57</text>
+<text x="56.0" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2012</text>
+<text x="108.3" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2013</text>
+<text x="160.6" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2014</text>
+<text x="212.9" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2015</text>
+<text x="265.2" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2016</text>
+<text x="317.5" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2017</text>
+<text x="369.8" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2018</text>
+<text x="422.2" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2019</text>
+<text x="474.5" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2020</text>
+<text x="526.8" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2021</text>
+<text x="579.1" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2022</text>
+<text x="631.4" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2023</text>
+<text x="683.7" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2024</text>
+<text x="736.0" y="278" text-anchor="middle" font-size="12" fill="var(--muted)">2025</text>
+<polyline points="56.0,135.6 108.3,137.0 160.6,136.3 212.9,189.6 265.2,200.0 317.5,227.9 369.8,202.8 422.2,172.9 474.5,105.6 526.8,81.5 579.1,92.0 631.4,100.4 683.7,107.3" fill="none" stroke="var(--ink)" stroke-width="2"/>
+<circle cx="56.0" cy="135.6" r="3.5" fill="var(--ink)"><title>2012: 0.536 (World Bank)</title></circle>
+<circle cx="108.3" cy="137.0" r="3.5" fill="var(--ink)"><title>2013: 0.535 (World Bank)</title></circle>
+<circle cx="160.6" cy="136.3" r="3.5" fill="var(--ink)"><title>2014: 0.535 (World Bank)</title></circle>
+<circle cx="212.9" cy="189.6" r="3.5" fill="var(--ink)"><title>2015: 0.520 (World Bank)</title></circle>
+<circle cx="265.2" cy="200.0" r="3.5" fill="var(--ink)"><title>2016: 0.517 (World Bank)</title></circle>
+<circle cx="317.5" cy="227.9" r="3.5" fill="var(--ink)"><title>2017: 0.509 (World Bank)</title></circle>
+<circle cx="369.8" cy="202.8" r="3.5" fill="var(--ink)"><title>2018: 0.516 (World Bank)</title></circle>
+<circle cx="422.2" cy="172.9" r="3.5" fill="var(--ink)"><title>2019: 0.525 (World Bank)</title></circle>
+<circle cx="474.5" cy="105.6" r="3.5" fill="var(--ink)"><title>2020: 0.544 (World Bank)</title></circle>
+<circle cx="526.8" cy="81.5" r="3.5" fill="var(--ink)"><title>2021: 0.551 (World Bank)</title></circle>
+<circle cx="579.1" cy="92.0" r="3.5" fill="var(--ink)"><title>2022: 0.548 (World Bank)</title></circle>
+<circle cx="631.4" cy="100.4" r="3.5" fill="var(--ink)"><title>2023: 0.546 (World Bank)</title></circle>
+<circle cx="683.7" cy="107.3" r="3.5" fill="var(--ink)"><title>2024: 0.544 (World Bank)</title></circle>
+<polyline points="526.8,40.4 579.1,64.8 631.4,75.3 683.7,82.2 736.0,151.9" fill="none" stroke="var(--accent)" stroke-width="2"/>
+<circle cx="526.8" cy="40.4" r="3.5" fill="var(--accent)"><title>2021: 0.563 (DANE)</title></circle>
+<circle cx="579.1" cy="64.8" r="3.5" fill="var(--accent)"><title>2022: 0.556 (DANE)</title></circle>
+<circle cx="631.4" cy="75.3" r="3.5" fill="var(--accent)"><title>2023: 0.553 (DANE)</title></circle>
+<circle cx="683.7" cy="82.2" r="3.5" fill="var(--accent)"><title>2024: 0.551 (DANE)</title></circle>
+<circle cx="736.0" cy="151.9" r="3.5" fill="var(--accent)"><title>2025: 0.531 (DANE)</title></circle>
+<text x="317.5" y="245.9" text-anchor="middle" font-size="12" fill="var(--ink)">0.509</text>
+<text x="687.7" y="125.3" text-anchor="middle" font-size="12" fill="var(--ink)">0.544</text>
+<text x="526.8" y="30.4" text-anchor="middle" font-size="12" fill="var(--accent)">0.563</text>
+<text x="728.0" y="169.9" text-anchor="end" font-size="12" fill="var(--accent)">0.531</text>
+<text x="160.6" y="113.6" font-size="12" fill="var(--ink)">World Bank</text>
+<text x="631.4" y="43.9" font-size="12" fill="var(--accent)">DANE (official)</text>
+</svg>
+    </figure>
+    <p class="calc">Sources: World Bank (2012 to 2024) and DANE (2021 to 2025). Both use DANE's household survey but build the income measure differently, so the levels are not identical.</p>
+
+    <h3><span>Table 3.</span> Inequality over time, selected years</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Indicator</th><th>2012</th><th>2017</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gini, World Bank</td><td>0.536</td><td>0.509</td><td>0.525</td><td>0.544</td><td>0.551</td><td>0.548</td><td>0.546</td><td>0.544</td><td>n/a</td></tr>
+          <tr><td>Gini, DANE (official)</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0.563</td><td>0.556</td><td>0.553</td><td>0.551</td><td>0.531</td></tr>
+          <tr><td>Share of the richest 10%</td><td>41.6%</td><td>39.4%</td><td>40.6%</td><td>42.0%</td><td>43.7%</td><td>43.5%</td><td>43.1%</td><td>42.8%</td><td>n/a</td></tr>
+          <tr><td>Share of the poorest 50%</td><td>15.6%</td><td>17.1%</td><td>16.2%</td><td>15.1%</td><td>15.1%</td><td>15.3%</td><td>15.3%</td><td>15.3%</td><td>n/a</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="calc">Sources: World Bank and DANE. n/a: not available from that source for that year.</p>
+
+    <h2>Conclusion</h2>
+    <p class="finding">Based on the results obtained, the Lorenz curve of Colombia for 2024 is far from the line of equality, with a Gini coefficient of 0.544: the poorest half of the population receives 15.3% of the income, while the richest 10% receives 42.8%.</p>
+    <ul class="dash read">
+      <li><b>Concentration at the top:</b> the richest 10% receives 41.5 times the income of the poorest 10%, and 4.16 times the income of the poorest 40% together.</li>
+      <li><b>Where the curve bends:</b> the first nine deciles accumulate 57.2% of the income; the last decile alone adds the remaining 42.8%.</li>
+      <li><b>2012 to 2017:</b> inequality decreased. The Gini went from 0.536 to 0.509, the lowest value of the series.</li>
+      <li><b>2018 to 2021:</b> it increased again, to 0.551 in 2021, above the level of 2012.</li>
+      <li><b>2022 to 2025:</b> it has decreased slowly. The official figure from DANE went from 0.563 in 2021 to 0.551 in 2024 and 0.531 in 2025.</li>
+    </ul>
+    <p style="margin-top:16px">From this it can be inferred that the distribution of income in Colombia has changed little in twelve years: the Gini of 2024 (0.544) is higher than that of 2012 (0.536), so the improvement achieved up to 2017 was lost and has been only partly recovered. The fall reported by DANE for 2025, from 0.551 to 0.531, is the largest annual change in its series since 2021. The World Bank figure for 2025 was not yet available to confirm it.</p>
+
+    <h2>Files</h2>
+    <p class="files">
+      <a href="Economics/2.%20Gini%20and%20Lorenz%20Curve/Colombia%20-%20Gini%20and%20Lorenz%20Curve%202024.xlsx" download>Colombia Gini and Lorenz Curve 2024.xlsx</a>
+    </p>
   </section>
 
   <section class="view" id="historical-indicators">
