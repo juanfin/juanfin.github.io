@@ -47,4 +47,17 @@ The transaction and its assumptions are the author's own illustration, not a rea
 
 ## Economics
 
-Planned: Phillips Curve, Gini and Lorenz Curve, Historical Indicators.
+### 1. Phillips Curve
+
+Inflation against unemployment in Colombia, 2001 to 2025: annual averages of DANE's monthly series, a regression for the whole period and for three sub-periods, and where 2025 sits.
+
+| File | Contents |
+|---|---|
+| [Colombia - Phillips Curve 2001-2025.xlsx](<Economics/1. Phillips Curve/Colombia - Phillips Curve 2001-2025.xlsx>) | 300 monthly observations, annual averages, regressions by period and a scatter chart |
+
+Source: DANE, retrieved from the Banco de la República statistical catalogue.
+
+### Planned
+
+2. Gini and Lorenz Curve
+3. Historical Indicators

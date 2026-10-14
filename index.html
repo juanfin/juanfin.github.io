@@ -61,6 +61,11 @@
   table.range thead tr:first-child th:first-child { text-align: left; }
   table.range td { color: var(--bright); }
   table.range td.amzn { color: var(--accent); }
+  .rb { margin: 4px 0 14px; max-width: 560px; }
+  .rb svg { width: 100%; height: auto; display: block; font-family: inherit; }
+  ul.read { margin: 0 0 8px; max-width: 78ch; }
+  ul.read b { color: var(--bright); font-weight: normal; }
+  figure { margin: 8px 0 6px; }
   .calc, .scroll + .note { color: var(--muted); font-size: 11.5px; line-height: 1.5; margin: 0 0 8px; }
   .files a { display: inline-block; margin: 6px 14px 0 0; color: var(--bright);
              text-decoration-color: var(--accent); text-underline-offset: 5px; }
@@ -150,7 +155,12 @@
       </table>
     </div>
     <p class="calc">Calculations: own, from Form 10-K filings.</p>
-    <p>Amazon's gross margin is below the interquartile range of the comparable companies. This implies that a larger part of each dollar of revenue is absorbed by the direct cost of what the company sells: Amazon's cost of sales includes the purchase price of the products it resells and their shipping, whereas most of the comparable companies sell software, advertising or chip designs, whose unit cost is low. For Amazon it means less room to cover its operating expenses before reaching a profit.</p>
+    <div class="rb" data-v="50.3" data-q1="63.7" data-med="68.8" data-q3="74.3" data-u="%" data-n="Amazon"></div>
+    <ul class="dash read">
+      <li><b>Result:</b> below the range: 50.3% against 63.7% to 74.3%.</li>
+      <li><b>Consequence:</b> about 50 cents of each dollar of revenue go to the direct cost of sales, against 31 cents for the median comparable, which leaves less room to cover operating expenses.</li>
+      <li><b>Cause:</b> Amazon resells physical products and pays for their shipping; most comparables sell software, advertising or chip designs, whose unit cost is low.</li>
+    </ul>
 
     <h3><span>Table 2.</span> Operating margin</h3>
     <div class="scroll">
@@ -163,7 +173,12 @@
       </table>
     </div>
     <p class="calc">Calculations: own, from Form 10-K filings.</p>
-    <p>Amazon's operating margin is below the interquartile range of the comparable companies. Amazon keeps about 11 cents of operating income for each dollar of revenue, against 40 cents for the median comparable. The distance to the median widens from 18.5 percentage points at the gross margin level to 28.7 points at the operating level, which implies that operating expenses, and not only the cost of sales, weigh more on Amazon than on the comparable companies. It also means that its operating income is more sensitive to changes in costs or in sales volume.</p>
+    <div class="rb" data-v="11.2" data-q1="32.0" data-med="39.9" data-q3="43.5" data-u="%" data-n="Amazon"></div>
+    <ul class="dash read">
+      <li><b>Result:</b> below the range: 11.2% against 32.0% to 43.5%.</li>
+      <li><b>Consequence:</b> Amazon keeps 11 cents of operating income per dollar of revenue, against 40 cents for the median comparable, so its profit is more sensitive to changes in costs or sales volume.</li>
+      <li><b>Cause:</b> the distance to the median widens from 18.5 points at gross level to 28.7 points at operating level, so operating expenses also weigh more on Amazon.</li>
+    </ul>
 
     <h3><span>Table 3.</span> Return on assets (ROA)</h3>
     <div class="scroll">
@@ -176,7 +191,12 @@
       </table>
     </div>
     <p class="calc">Calculations: own, from Form 10-K filings.</p>
-    <p>Amazon's return on assets is below the interquartile range of the comparable companies. ROA is the product of the net margin and the asset turnover. Amazon generates 0.88 dollars of revenue per dollar of assets, above the comparables' median of 0.55, so it uses its assets intensively. The lower ROA comes from its net margin: 10.8% against a median of 32.8%. This implies that each dollar invested in the business returns less profit than in the comparable companies, even though the asset base is used more.</p>
+    <div class="rb" data-v="9.5" data-q1="15.0" data-med="16.5" data-q3="26.7" data-u="%" data-n="Amazon"></div>
+    <ul class="dash read">
+      <li><b>Result:</b> below the range: 9.5% against 15.0% to 26.7%.</li>
+      <li><b>Consequence:</b> each dollar invested in assets returns 9.5 cents of profit, against 16.5 cents for the median comparable.</li>
+      <li><b>Cause:</b> the net margin (10.8% against a median of 32.8%), not the use of assets: Amazon generates 0.88 dollars of revenue per dollar of assets, above the median of 0.55.</li>
+    </ul>
 
     <h3><span>Table 4.</span> Return on equity (ROE)</h3>
     <div class="scroll">
@@ -189,7 +209,12 @@
       </table>
     </div>
     <p class="calc">Calculations: own, from Form 10-K filings.</p>
-    <p>Amazon's return on equity is below the interquartile range of the comparable companies. Its financial leverage is similar to that of the comparables (assets of 1.99 times equity, against a median of 1.80), so the difference again comes from the margin and not from the capital structure. Amazon also retains its earnings instead of paying dividends, which keeps its equity base growing, while some comparables reduce theirs through share buybacks (Apple's ROE of 151.9% is the clearest case). This implies a lower return on the book value of the shareholders' investment.</p>
+    <div class="rb" data-v="18.9" data-q1="28.1" data-med="29.6" data-q3="54.1" data-u="%" data-n="Amazon"></div>
+    <ul class="dash read">
+      <li><b>Result:</b> below the range: 18.9% against 28.1% to 54.1%.</li>
+      <li><b>Consequence:</b> each dollar of shareholders' equity returns 18.9 cents of profit, against 29.6 cents for the median comparable.</li>
+      <li><b>Cause:</b> again the margin and not the capital structure: leverage is similar (assets of 1.99 times equity, against a median of 1.80). Amazon also retains its earnings, while some comparables shrink their equity through buybacks.</li>
+    </ul>
 
     <h2>Conclusion</h2>
     <p class="finding">Based on the results obtained, it was possible to verify that the four profit level indicators of Amazon for fiscal year 2025 are below the interquartile range of the comparable companies.</p>
@@ -257,6 +282,7 @@
       </table>
     </div>
     <p class="calc">Calculations: own, from Form 10-K filings and closing prices at 31 December 2025.</p>
+    <div class="rb" data-v="16.8" data-q1="23.9" data-med="28.5" data-q3="42.5" data-u="x" data-n="Amazon"></div>
     <p>Amazon's EV / EBITDA multiple is below the interquartile range of the comparable companies.</p>
 
     <h3><span>Table 2.</span> EV / Revenue</h3>
@@ -270,6 +296,7 @@
       </table>
     </div>
     <p class="calc">Calculations: own, from Form 10-K filings and closing prices at 31 December 2025.</p>
+    <div class="rb" data-v="3.4" data-q1="9.6" data-med="11.7" data-q3="16.9" data-u="x" data-n="Amazon"></div>
     <p>Amazon's EV / Revenue multiple is below the interquartile range of the comparable companies.</p>
 
     <h3><span>Table 3.</span> Value per share of Amazon</h3>
@@ -598,7 +625,7 @@
     <p class="sub">Macroeconomic indicators and charts.</p>
     <h2>Models</h2>
     <ul class="dash">
-      <li><a href="#phillips-curve">1. Phillips Curve</a> <span class="status">[in progress]</span></li>
+      <li><a href="#phillips-curve">1. Phillips Curve</a></li>
       <li><a href="#gini-and-lorenz-curve">2. Gini and Lorenz Curve</a> <span class="status">[in progress]</span></li>
       <li><a href="#historical-indicators">3. Historical Indicators</a> <span class="status">[in progress]</span></li>
     </ul>
@@ -606,8 +633,142 @@
 
   <section class="view" id="phillips-curve">
     <h1>1. Phillips Curve</h1>
-    <p class="sub">Economics / inflation and unemployment</p>
-    <p><span class="status">[in progress]</span> This chart is being built.</p>
+    <p class="sub">Economics / inflation and unemployment / Colombia, 2001 to 2025</p>
+
+    <h2>Objective</h2>
+    <p>The objective of this analysis is to verify whether the data for Colombia between 2001 and 2025 show the inverse relationship between unemployment and inflation described by the Phillips curve, and to locate 2025 within that relationship.</p>
+
+    <h2>Method</h2>
+    <p>Two monthly series published by DANE were used: the national unemployment rate, from the household survey (GEIH), and annual inflation, measured as the 12-month change in the consumer price index. Annual averages were calculated for each year, since the monthly unemployment rate is strongly seasonal.</p>
+    <p>The relationship was measured with a simple linear regression of inflation on unemployment, for the whole period and for three sub-periods. The Phillips curve predicts a negative slope: lower unemployment together with higher inflation.</p>
+    <dl class="kv">
+      <dt>Country</dt><dd>Colombia</dd>
+      <dt>Period</dt><dd>January 2001 to December 2025, 300 monthly observations</dd>
+      <dt>Variables</dt><dd>Unemployment rate (national total) and annual CPI inflation</dd>
+      <dt>Source</dt><dd>DANE, retrieved from the Banco de la República statistical catalogue</dd>
+    </dl>
+
+    <h2>Results</h2>
+    <h3><span>Figure 1.</span> Inflation against unemployment, annual averages</h3>
+    <figure>
+<svg viewBox="0 0 760 440" role="img" aria-label="Scatter chart of annual inflation against the unemployment rate in Colombia, 2001 to 2025" style="width:100%;height:auto;max-width:760px;font-family:inherit">
+<line x1="56" x2="740" y1="392.0" y2="392.0" stroke="var(--line)"/>
+<text x="48" y="396.0" text-anchor="end" font-size="12" fill="var(--muted)">0%</text>
+<line x1="56" x2="740" y1="334.2" y2="334.2" stroke="var(--line)"/>
+<text x="48" y="338.2" text-anchor="end" font-size="12" fill="var(--muted)">2%</text>
+<line x1="56" x2="740" y1="276.3" y2="276.3" stroke="var(--line)"/>
+<text x="48" y="280.3" text-anchor="end" font-size="12" fill="var(--muted)">4%</text>
+<line x1="56" x2="740" y1="218.5" y2="218.5" stroke="var(--line)"/>
+<text x="48" y="222.5" text-anchor="end" font-size="12" fill="var(--muted)">6%</text>
+<line x1="56" x2="740" y1="160.6" y2="160.6" stroke="var(--line)"/>
+<text x="48" y="164.6" text-anchor="end" font-size="12" fill="var(--muted)">8%</text>
+<line x1="56" x2="740" y1="102.8" y2="102.8" stroke="var(--line)"/>
+<text x="48" y="106.8" text-anchor="end" font-size="12" fill="var(--muted)">10%</text>
+<line x1="56" x2="740" y1="44.9" y2="44.9" stroke="var(--line)"/>
+<text x="48" y="48.9" text-anchor="end" font-size="12" fill="var(--muted)">12%</text>
+<text x="56.0" y="410" text-anchor="middle" font-size="12" fill="var(--muted)">8%</text>
+<text x="128.0" y="410" text-anchor="middle" font-size="12" fill="var(--muted)">9%</text>
+<text x="200.0" y="410" text-anchor="middle" font-size="12" fill="var(--muted)">10%</text>
+<text x="272.0" y="410" text-anchor="middle" font-size="12" fill="var(--muted)">11%</text>
+<text x="344.0" y="410" text-anchor="middle" font-size="12" fill="var(--muted)">12%</text>
+<text x="416.0" y="410" text-anchor="middle" font-size="12" fill="var(--muted)">13%</text>
+<text x="488.0" y="410" text-anchor="middle" font-size="12" fill="var(--muted)">14%</text>
+<text x="560.0" y="410" text-anchor="middle" font-size="12" fill="var(--muted)">15%</text>
+<text x="632.0" y="410" text-anchor="middle" font-size="12" fill="var(--muted)">16%</text>
+<text x="704.0" y="410" text-anchor="middle" font-size="12" fill="var(--muted)">17%</text>
+<line x1="56" x2="740" y1="392.0" y2="392.0" stroke="var(--muted)"/>
+<text x="398" y="432" text-anchor="middle" font-size="12" fill="var(--muted)">Unemployment rate, annual average</text>
+<text transform="translate(14 204) rotate(-90)" text-anchor="middle" font-size="12" fill="var(--muted)">Annual inflation, annual average</text>
+<line x1="56" x2="740" y1="305.2" y2="305.2" stroke="var(--muted)" stroke-dasharray="2 5"/>
+<text x="736" y="299.2" text-anchor="end" font-size="11" fill="var(--muted)">inflation target 3%</text>
+<line x1="120.6" y1="251.1" x2="365.2" y2="335.0" stroke="var(--ink)" stroke-dasharray="6 4"/>
+<text x="371.2" y="349.0" font-size="11" fill="var(--ink)">trend 2010-2019</text>
+<circle cx="558.2" cy="161.4" r="4.5" fill="var(--muted)" stroke="var(--muted)" stroke-width="1.5"><title>2001: unemployment 15.0%, inflation 8.0%</title></circle>
+<text x="566.2" y="165.4" text-anchor="start" font-size="12" fill="var(--ink)">2001</text>
+<circle cx="605.9" cy="208.2" r="4.5" fill="var(--muted)" stroke="var(--muted)" stroke-width="1.5"><title>2002: unemployment 15.6%, inflation 6.4%</title></circle>
+<text x="613.9" y="212.2" text-anchor="start" font-size="12" fill="var(--ink)">2002</text>
+<circle cx="494.0" cy="185.6" r="4.5" fill="var(--muted)" stroke="var(--muted)" stroke-width="1.5"><title>2003: unemployment 14.1%, inflation 7.1%</title></circle>
+<circle cx="460.7" cy="221.2" r="4.5" fill="var(--muted)" stroke="var(--muted)" stroke-width="1.5"><title>2004: unemployment 13.6%, inflation 5.9%</title></circle>
+<circle cx="331.5" cy="245.9" r="4.5" fill="var(--muted)" stroke="var(--muted)" stroke-width="1.5"><title>2005: unemployment 11.8%, inflation 5.1%</title></circle>
+<circle cx="348.1" cy="267.7" r="4.5" fill="var(--muted)" stroke="var(--muted)" stroke-width="1.5"><title>2006: unemployment 12.1%, inflation 4.3%</title></circle>
+<circle cx="293.5" cy="231.7" r="4.5" fill="var(--muted)" stroke="var(--muted)" stroke-width="1.5"><title>2007: unemployment 11.3%, inflation 5.5%</title></circle>
+<circle cx="300.1" cy="189.8" r="4.5" fill="var(--muted)" stroke="var(--muted)" stroke-width="1.5"><title>2008: unemployment 11.4%, inflation 7.0%</title></circle>
+<text x="308.1" y="193.8" text-anchor="start" font-size="12" fill="var(--ink)">2008</text>
+<circle cx="359.5" cy="269.5" r="4.5" fill="var(--muted)" stroke="var(--muted)" stroke-width="1.5"><title>2009: unemployment 12.2%, inflation 4.2%</title></circle>
+<text x="367.5" y="273.5" text-anchor="start" font-size="12" fill="var(--ink)">2009</text>
+<circle cx="343.6" cy="326.3" r="4.5" fill="var(--ink)" stroke="var(--ink)" stroke-width="1.5"><title>2010: unemployment 12.0%, inflation 2.3%</title></circle>
+<circle cx="276.9" cy="293.2" r="4.5" fill="var(--ink)" stroke="var(--ink)" stroke-width="1.5"><title>2011: unemployment 11.1%, inflation 3.4%</title></circle>
+<circle cx="245.2" cy="300.3" r="4.5" fill="var(--ink)" stroke="var(--ink)" stroke-width="1.5"><title>2012: unemployment 10.6%, inflation 3.2%</title></circle>
+<circle cx="193.5" cy="333.6" r="4.5" fill="var(--ink)" stroke="var(--ink)" stroke-width="1.5"><title>2013: unemployment 9.9%, inflation 2.0%</title></circle>
+<text x="185.5" y="347.6" text-anchor="end" font-size="12" fill="var(--ink)">2013</text>
+<circle cx="157.4" cy="308.2" r="4.5" fill="var(--ink)" stroke="var(--ink)" stroke-width="1.5"><title>2014: unemployment 9.4%, inflation 2.9%</title></circle>
+<circle cx="142.2" cy="247.8" r="4.5" fill="var(--ink)" stroke="var(--ink)" stroke-width="1.5"><title>2015: unemployment 9.2%, inflation 5.0%</title></circle>
+<circle cx="167.2" cy="174.4" r="4.5" fill="var(--ink)" stroke="var(--ink)" stroke-width="1.5"><title>2016: unemployment 9.5%, inflation 7.5%</title></circle>
+<text x="159.2" y="166.4" text-anchor="end" font-size="12" fill="var(--ink)">2016</text>
+<circle cx="176.7" cy="267.0" r="4.5" fill="var(--ink)" stroke="var(--ink)" stroke-width="1.5"><title>2017: unemployment 9.7%, inflation 4.3%</title></circle>
+<circle cx="197.6" cy="298.2" r="4.5" fill="var(--ink)" stroke="var(--ink)" stroke-width="1.5"><title>2018: unemployment 10.0%, inflation 3.2%</title></circle>
+<circle cx="263.9" cy="290.2" r="4.5" fill="var(--ink)" stroke="var(--ink)" stroke-width="1.5"><title>2019: unemployment 10.9%, inflation 3.5%</title></circle>
+<circle cx="680.1" cy="318.7" r="4.5" fill="var(--bg)" stroke="var(--muted)" stroke-width="1.5"><title>2020: unemployment 16.7%, inflation 2.5%</title></circle>
+<text x="670.1" y="322.7" text-anchor="end" font-size="12" fill="var(--ink)">2020</text>
+<circle cx="474.4" cy="290.9" r="4.5" fill="var(--bg)" stroke="var(--muted)" stroke-width="1.5"><title>2021: unemployment 13.8%, inflation 3.5%</title></circle>
+<text x="482.4" y="294.9" text-anchor="start" font-size="12" fill="var(--ink)">2021</text>
+<circle cx="287.7" cy="98.4" r="4.5" fill="var(--muted)" stroke="var(--muted)" stroke-width="1.5"><title>2022: unemployment 11.2%, inflation 10.2%</title></circle>
+<text x="295.7" y="102.4" text-anchor="start" font-size="12" fill="var(--ink)">2022</text>
+<circle cx="211.8" cy="51.5" r="4.5" fill="var(--muted)" stroke="var(--muted)" stroke-width="1.5"><title>2023: unemployment 10.2%, inflation 11.8%</title></circle>
+<text x="201.8" y="55.5" text-anchor="end" font-size="12" fill="var(--ink)">2023</text>
+<circle cx="211.9" cy="200.3" r="4.5" fill="var(--muted)" stroke="var(--muted)" stroke-width="1.5"><title>2024: unemployment 10.2%, inflation 6.6%</title></circle>
+<text x="219.9" y="212.3" text-anchor="start" font-size="12" fill="var(--ink)">2024</text>
+<circle cx="120.6" cy="243.3" r="6.5" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.5"><title>2025: unemployment 8.9%, inflation 5.1%</title></circle>
+<text x="110.6" y="247.3" text-anchor="end" font-size="12" fill="var(--accent)" font-weight="bold">2025</text>
+</svg>
+    </figure>
+    <p class="calc">Calculations: own, from DANE. Each point is one year. Orange: 2025. White: 2010 to 2019. Hollow: 2020 and 2021 (pandemic). Grey: other years.</p>
+
+    <h3><span>Table 1.</span> Relationship between inflation and unemployment by period</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Period</th><th>Slope</th><th>Correlation</th><th>Sign predicted by the Phillips curve</th></tr>
+        </thead>
+        <tbody>
+          <tr class="tested"><td>2001 to 2025, all years</td><td>0.02</td><td>0.02</td><td>No relationship</td></tr>
+          <tr><td>2001 to 2009</td><td>0.45</td><td>0.56</td><td>No, positive</td></tr>
+          <tr><td>2010 to 2019</td><td>-0.85</td><td>-0.48</td><td>Yes, negative</td></tr>
+          <tr><td>2022 to 2025</td><td>2.21</td><td>0.68</td><td>No, positive</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own. Slope: change in inflation, in percentage points, associated with one more point of unemployment. The sub-periods have between 4 and 10 observations.</p>
+
+    <h3><span>Table 2.</span> Unemployment and inflation, 2019 to 2025</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Annual average</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Unemployment rate</td><td>10.9%</td><td>16.7%</td><td>13.8%</td><td>11.2%</td><td>10.2%</td><td>10.2%</td><td>8.9%</td></tr>
+          <tr><td>Annual inflation</td><td>3.5%</td><td>2.5%</td><td>3.5%</td><td>10.2%</td><td>11.8%</td><td>6.6%</td><td>5.1%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own, from DANE.</p>
+
+    <h2>Conclusion</h2>
+    <p class="finding">Based on the results obtained, the data for Colombia between 2001 and 2025 do not show a single, stable Phillips curve: over the whole period the slope is 0.02 and the correlation is 0.02, that is, no relationship between the two variables.</p>
+    <ul class="dash read">
+      <li><b>2010 to 2019:</b> the only period with the predicted sign. One point less of unemployment is associated with 0.85 points more of inflation.</li>
+      <li><b>2001 to 2009:</b> both variables fell together, as inflation came down from 8.0% to 4.2% while unemployment fell from 15.0% to 12.2%.</li>
+      <li><b>2022 to 2025:</b> both fell together again. Inflation came down from 11.8% in 2023 to 5.1% in 2025 while unemployment fell from 10.2% to 8.9%.</li>
+      <li><b>2025:</b> unemployment of 8.9% is the lowest annual average of the series, and inflation of 5.1% remains above the 3% target.</li>
+    </ul>
+    <p style="margin-top:16px">From this it can be inferred that the reduction of inflation after 2023 did not have the cost in employment that the Phillips curve predicts. It also implies that the relationship changes with the type of shock: when prices move for reasons of supply or expectations, as in 2022 and 2023, unemployment and inflation can move in the same direction.</p>
+    <p>For 2025 the reading is less favourable. Inflation stopped falling during the year (5.2% in December 2024 and 5.1% in December 2025) with the labour market at its tightest point, which is consistent with the pressure the Phillips curve describes and suggests that the last stretch towards the 3% target is the hardest. This is an association between two series and does not prove causation.</p>
+
+    <h2>Files</h2>
+    <p class="files">
+      <a href="Economics/1.%20Phillips%20Curve/Colombia%20-%20Phillips%20Curve%202001-2025.xlsx" download>Colombia Phillips Curve 2001-2025.xlsx</a>
+    </p>
   </section>
 
   <section class="view" id="gini-and-lorenz-curve">
@@ -638,6 +799,24 @@
     if (e && stacked) document.querySelector("main").scrollIntoView();
     else window.scrollTo(0, 0);
   }
+  // Range chart: the comparables' interquartile range as a band, the median as a tick, the company as a dot.
+  document.querySelectorAll(".rb").forEach(function (el) {
+    var d = el.dataset, v = +d.v, q1 = +d.q1, med = +d.med, q3 = +d.q3, u = d.u;
+    var lo = Math.min(v, q1), hi = Math.max(v, q3), pad = (hi - lo) * 0.16;
+    lo -= pad; hi += pad;
+    var W = 560, x = function (n) { return ((n - lo) / (hi - lo) * W).toFixed(1); };
+    el.innerHTML = '<svg viewBox="0 0 ' + W + ' 78" role="img" aria-label="' + d.n + ' ' + v + u + ' against an interquartile range of ' + q1 + u + ' to ' + q3 + u + '">' +
+      '<line x1="0" x2="' + W + '" y1="40" y2="40" stroke="var(--line)"/>' +
+      '<rect x="' + x(q1) + '" y="30" width="' + (x(q3) - x(q1)).toFixed(1) + '" height="20" fill="var(--line)" stroke="var(--muted)"/>' +
+      '<line x1="' + x(med) + '" x2="' + x(med) + '" y1="26" y2="54" stroke="var(--bright)" stroke-width="2"/>' +
+      '<circle cx="' + x(v) + '" cy="40" r="6.5" fill="var(--accent)"/>' +
+      '<text x="' + x(v) + '" y="20" font-size="12.5" fill="var(--accent)" text-anchor="middle">' + d.n + ' ' + v + u + '</text>' +
+      '<text x="' + x(med) + '" y="20" font-size="12" fill="var(--bright)" text-anchor="middle">median ' + med + u + '</text>' +
+      '<text x="' + x(q1) + '" y="70" font-size="12" fill="var(--muted)" text-anchor="middle">' + q1 + u + '</text>' +
+      '<text x="' + x(q3) + '" y="70" font-size="12" fill="var(--muted)" text-anchor="middle">' + q3 + u + '</text>' +
+      '<text x="' + ((+x(q1) + +x(q3)) / 2).toFixed(1) + '" y="70" font-size="11" fill="var(--muted)" text-anchor="middle">interquartile range</text>' +
+      '</svg>';
+  });
   window.addEventListener("hashchange", show);
   show(null);
 </script>
