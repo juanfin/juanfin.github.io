@@ -76,3 +76,15 @@ Colombia from 1980 to 2025: inflation, interest rate, unemployment, GDP growth, 
 | [Colombia - Historical Indicators 1980-2025.xlsx](<Economics/3. Historical Indicators/Colombia - Historical Indicators 1980-2025.xlsx>) | Annual data, averages by decade, index 1980 = 100 and normalized series, with charts |
 
 Source: World Bank, World Development Indicators.
+
+## History
+
+### 1. World History Timeline
+
+An interactive timeline of 101 milestones from 3500 BCE to today, in seven categories, with an axis that changes scale by era and a zoom into each era.
+
+| File | Contents |
+|---|---|
+| [World History Milestones.csv](<History/1. World History Timeline/World History Milestones.csv>) | Year, date, era, category, keyword and one-sentence summary of each milestone |
+
+The selection and wording are the author's own.
