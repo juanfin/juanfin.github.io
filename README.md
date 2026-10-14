@@ -67,6 +67,12 @@ Distribution of income in Colombia: Lorenz curve and Gini coefficient for 2024 b
 
 Sources: World Bank Poverty and Inequality Platform, and DANE.
 
-### Planned
+### 3. Historical Indicators
 
-3. Historical Indicators
+Colombia from 1980 to 2025: inflation, interest rate, unemployment, GDP growth, public debt, fiscal balance, population and real GDP. Shown as small multiples, an index with 1980 = 100 and a normalized heat map, instead of a dual-axis chart.
+
+| File | Contents |
+|---|---|
+| [Colombia - Historical Indicators 1980-2025.xlsx](<Economics/3. Historical Indicators/Colombia - Historical Indicators 1980-2025.xlsx>) | Annual data, averages by decade, index 1980 = 100 and normalized series, with charts |
+
+Source: World Bank, World Development Indicators.

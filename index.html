@@ -66,6 +66,12 @@
   ul.read { margin: 0 0 8px; max-width: 78ch; }
   ul.read b { color: var(--bright); font-weight: normal; }
   figure { margin: 8px 0 6px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin: 8px 0 8px; }
+  .tile { border: 1px solid var(--line); padding: 12px 14px; }
+  .tile span { display: block; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+  .tile b { display: block; color: var(--bright); font-size: 20px; font-weight: normal; margin-top: 4px; }
+  .multiples { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px 22px; margin: 8px 0 8px; }
+  .multiples svg, #hist-index svg, #hist-heat svg { width: 100%; height: auto; display: block; font-family: inherit; }
   .calc, .scroll + .note { color: var(--muted); font-size: 11.5px; line-height: 1.5; margin: 0 0 8px; }
   .files a { display: inline-block; margin: 6px 14px 0 0; color: var(--bright);
              text-decoration-color: var(--accent); text-underline-offset: 5px; }
@@ -627,7 +633,7 @@
     <ul class="dash">
       <li><a href="#phillips-curve">1. Phillips Curve</a></li>
       <li><a href="#gini-and-lorenz-curve">2. Gini and Lorenz Curve</a></li>
-      <li><a href="#historical-indicators">3. Historical Indicators</a> <span class="status">[in progress]</span></li>
+      <li><a href="#historical-indicators">3. Historical Indicators</a></li>
     </ul>
   </section>
 
@@ -977,8 +983,77 @@
 
   <section class="view" id="historical-indicators">
     <h1>3. Historical Indicators</h1>
-    <p class="sub">Economics / inflation, interest rate, unemployment, population</p>
-    <p><span class="status">[in progress]</span> These charts are being built.</p>
+    <p class="sub">Economics / inflation, interest rate, unemployment, output, population and public finances / Colombia, 1980 to 2025</p>
+
+    <h2>Objective</h2>
+    <p>The objective of this analysis is to describe how the main macroeconomic indicators of Colombia have evolved since 1980, and to compare them with each other even though they are measured in different units.</p>
+
+    <h2>Method</h2>
+    <p>Nine annual series from the World Bank were used. Since they are measured in different units (percentages, people and dollars), they were not drawn on one chart with two axes, which makes the reading depend on how each axis is scaled. Three forms were used instead:</p>
+    <ul class="dash read">
+      <li><b>Small multiples:</b> one panel per indicator in percent, all with the same time axis, so the timing of each movement can be compared.</li>
+      <li><b>Index 1980 = 100:</b> population and output are divided by their 1980 value, so that people and dollars share one axis.</li>
+      <li><b>Normalization:</b> each indicator is expressed in standard deviations from its own average, which shows in which years it was unusually high or low.</li>
+    </ul>
+    <dl class="kv" style="margin-top:16px">
+      <dt>Country</dt><dd>Colombia</dd>
+      <dt>Period</dt><dd>1980 to 2025, annual</dd>
+      <dt>Indicators</dt><dd>Inflation, interest rate, unemployment, GDP growth, public debt, fiscal balance, population, real GDP and real GDP per person</dd>
+      <dt>Source</dt><dd>World Bank, World Development Indicators</dd>
+    </dl>
+
+    <h2>Results</h2>
+    <h3><span>Colombia in 2025</span></h3>
+    <div class="tiles"><div class="tile"><span>Population</span><b>53.4 million</b></div><div class="tile"><span>GDP, current prices</span><b>US$ 457 billion</b></div><div class="tile"><span>GDP per person</span><b>US$ 8,562</b></div><div class="tile"><span>Inflation</span><b>5.1%</b></div><div class="tile"><span>Interest rate</span><b>14.3%</b></div><div class="tile"><span>Unemployment</span><b>8.4%</b></div></div>
+    <p class="calc">Source: World Bank. GDP per person: own calculation.</p>
+
+    <h3><span>Figure 1.</span> Indicators in percent, 1980 to 2025</h3>
+    <div class="multiples" id="hist-multiples"></div>
+    <p class="calc">Source: World Bank. Each panel has its own vertical scale. Move the pointer over a panel to read the same year in all of them. Interest rate from 1986; public debt and fiscal balance from 1998, with gaps. The public debt series has abrupt jumps between years and should not be read as a trend.</p>
+
+    <h3><span>Figure 2.</span> Population and output, index 1980 = 100</h3>
+    <figure id="hist-index"></figure>
+    <p class="calc">Calculations: own, from the World Bank. Real GDP in constant 2015 US dollars.</p>
+
+    <h3><span>Figure 3.</span> Normalized indicators: distance from each indicator's own average</h3>
+    <figure id="hist-heat"></figure>
+    <p class="calc">Calculations: own. Each cell is the value of the year less the average of the series, divided by its standard deviation. Orange: above its average. Blue: below. Empty: no data.</p>
+
+    <h3><span>Table 1.</span> Averages by decade</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Indicator</th><th>1980s</th><th>1990s</th><th>2000s</th><th>2010s</th><th>2020 to 2025</th><th>Latest year</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Inflation</td><td>23.5%</td><td>22.2%</td><td>6.3%</td><td>3.7%</td><td>6.6%</td><td>5.1%</td></tr>
+          <tr><td>Interest rate</td><td>41.3%</td><td>39.1%</td><td>15.9%</td><td>11.9%</td><td>14.5%</td><td>14.3%</td></tr>
+          <tr><td>Unemployment</td><td>10.2%</td><td>11.3%</td><td>13.3%</td><td>9.6%</td><td>11.3%</td><td>8.4%</td></tr>
+          <tr><td>GDP growth</td><td>3.4%</td><td>2.9%</td><td>3.9%</td><td>3.7%</td><td>2.7%</td><td>2.6%</td></tr>
+          <tr><td>Public debt</td><td>n/a</td><td>12.2%</td><td>51.1%</td><td>64.7%</td><td>76.9%</td><td>71.2%</td></tr>
+          <tr><td>Fiscal balance</td><td>n/a</td><td>-4.7%</td><td>-5.2%</td><td>-2.4%</td><td>-5.6%</td><td>-4.6%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own, from the World Bank. Averages of the years available in each decade. Latest year: 2025, except public debt and fiscal balance (2024). The public debt averages are affected by the jumps in that series.</p>
+
+    <h2>Conclusion</h2>
+    <p class="finding">Based on the results obtained, the main change in the Colombian economy since 1980 is the reduction of inflation and interest rates: inflation averaged 23.5% in the 1980s and 22.2% in the 1990s, against 3.7% in the 2010s.</p>
+    <ul class="dash read">
+      <li><b>Inflation:</b> it reached its maximum of 30.4% in 1991 and has stayed in single digits since 2000, except in 2022 and 2023. In 2025 it was 5.1%.</li>
+      <li><b>Interest rate:</b> the lending rate followed inflation down, from a maximum of 46.4% in 1991 to a minimum of 9.3% in 2021. In 2025 it was 14.3%.</li>
+      <li><b>Unemployment:</b> it has stayed high through the whole period, with decade averages between 9.6% and 13.3%. Its maximum was 20.5% in 2000, and the 8.4% of 2025 is its lowest value since 1994. The 1980 figure of 3.8% is out of line with the following years and is not used as a reference.</li>
+      <li><b>GDP growth:</b> output fell in only 2 of the 46 years: 1999, 2020.</li>
+      <li><b>Population and output:</b> the population multiplied by 2.0 between 1980 and 2025, real GDP by 4.3 and real GDP per person by 2.1.</li>
+      <li><b>Public finances:</b> the fiscal balance of the central government was negative in 20 of the 21 years with data, with its largest deficit, 8.5% of GDP, in 2020. Central government debt was 71.2% of GDP in 2024; the series has gaps and abrupt jumps between years, so no trend is inferred from it.</li>
+    </ul>
+    <p style="margin-top:16px">From this it can be inferred that Colombia achieved price stability without a comparable improvement in the labour market or in public finances: inflation and interest rates fell to a fraction of their earlier levels, while unemployment remained close to or above 10% in most years and the central government ran a deficit almost every year. The normalized chart shows the same pattern: the years of unusually high inflation and interest rates are concentrated before 2000, and the two recessions, 1999 and 2020, stand out as the years of unusually high unemployment and low growth.</p>
+
+    <h2>Files</h2>
+    <p class="files">
+      <a href="Economics/3.%20Historical%20Indicators/Colombia%20-%20Historical%20Indicators%201980-2025.xlsx" download>Colombia Historical Indicators 1980-2025.xlsx</a>
+    </p>
+    <script type="application/json" id="hist-data">{"years":[1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"rates":[{"key":"inflation","label":"Inflation","unit":"Consumer prices, annual % change","values":[26.55,27.45,24.72,19.6,16.16,24.09,18.84,23.3,28.11,25.87,29.15,30.39,27.01,22.44,22.85,20.89,20.8,18.47,18.68,10.87,9.23,7.97,6.35,7.13,5.9,5.05,4.29,5.54,7.0,4.2,2.27,3.42,3.17,2.02,2.9,4.99,7.51,4.31,3.24,3.52,2.53,3.5,10.18,11.74,6.61,5.14]},{"key":"lending","label":"Interest rate","unit":"Lending interest rate, %","values":[null,null,null,null,null,null,40.22,40.48,42.05,42.39,44.57,46.42,36.72,35.28,39.86,42.08,41.36,33.71,41.6,29.43,18.79,20.72,16.33,15.19,15.08,14.56,12.89,15.38,17.18,13.01,9.38,11.22,12.59,10.99,10.87,11.45,14.65,13.69,12.11,11.77,9.85,9.34,15.81,21.03,16.37,14.31]},{"key":"unemp_ne","label":"Unemployment","unit":"% of the labour force, national estimate","values":[3.83,8.13,9.1,11.13,13.0,13.89,13.04,10.93,10.14,8.82,10.15,10.12,9.44,7.8,7.6,8.72,11.81,12.14,15,20.06,20.52,15.04,14.48,13.22,13.72,11.06,null,10.25,10.52,11.32,11.15,10.29,9.96,9.25,8.8,8.57,8.92,9.09,9.36,10.28,15.57,13.9,10.54,9.59,9.62,8.43]},{"key":"gdp_growth","label":"GDP growth","unit":"Real GDP, annual % change","values":[4.09,2.28,0.95,1.57,3.35,3.11,5.82,5.37,4.06,3.41,4.28,2.0,4.04,5.39,5.81,5.2,2.06,3.43,0.57,-4.2,2.92,1.68,2.5,3.92,5.33,4.83,6.72,6.74,3.28,1.14,4.49,6.95,3.91,5.13,4.5,2.96,2.09,1.36,2.56,3.19,-7.19,10.8,7.33,0.84,1.49,2.64]},{"key":"debt_cg","label":"Public debt","unit":"Central government debt, % of GDP","values":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,5.4,19.07,17.71,null,null,52.54,null,null,null,null,65.25,69.0,72.45,62.86,65.23,67.1,47.98,53.28,66.91,66.73,71.65,72.7,91.16,80.43,70.26,71.21,71.2,null]},{"key":"balance_cg","label":"Fiscal balance","unit":"Central government net lending (+) / borrowing (-), % of GDP","values":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,-3.38,-6.11,-3.12,null,null,-5.05,null,null,null,null,-5.72,-7.08,-4.56,-1.07,2.77,-5.53,-4.17,-1.41,-3.04,-2.2,-2.61,-2.24,-8.52,-7.65,-5.3,-2.04,-4.64,null]}],"index":[{"label":"Population","values":[100.0,102.3,104.7,107.2,109.7,112.1,114.5,116.8,119.3,121.7,124.3,126.8,129.3,131.9,134.6,137.2,139.7,142.2,144.8,147.3,149.7,152.1,154.5,156.8,159.1,161.4,163.5,165.6,167.6,169.6,171.5,173.4,175.1,176.8,178.4,179.9,181.7,184.4,187.8,191.2,194.0,196.1,198.2,200.4,202.6,204.7]},{"label":"Real GDP","values":[100.0,102.3,103.2,104.9,108.4,111.8,118.3,124.6,129.7,134.1,139.8,142.6,148.4,156.4,165.5,174.1,177.7,183.8,184.8,177.1,182.2,185.3,189.9,197.4,207.9,217.9,232.6,248.3,256.4,259.3,271.0,289.8,301.2,316.6,330.9,340.6,347.8,352.5,361.5,373.0,346.2,383.6,411.7,415.2,421.4,432.5]},{"label":"Real GDP per person","values":[100.0,99.9,98.6,97.8,98.8,99.7,103.3,106.7,108.7,110.2,112.5,112.5,114.8,118.5,123.0,126.9,127.2,129.2,127.7,120.2,121.7,121.8,123.0,125.9,130.6,135.0,142.2,149.9,153.0,152.9,158.0,167.2,172.0,179.1,185.5,189.3,191.4,191.2,192.5,195.1,178.5,195.6,207.7,207.2,208.0,211.3]}]}</script>
   </section>
 
 </main>
@@ -1015,6 +1090,127 @@
       '<text x="' + ((+x(q1) + +x(q3)) / 2).toFixed(1) + '" y="70" font-size="11" fill="var(--muted)" text-anchor="middle">interquartile range</text>' +
       '</svg>';
   });
+  // Historical indicators: small multiples, index chart and normalized heat map.
+  (function () {
+    var src = document.getElementById("hist-data");
+    if (!src) return;
+    var H = JSON.parse(src.textContent), yrs = H.years, n = yrs.length, NS = "http://www.w3.org/2000/svg";
+    var SERIES = ["#f5a623", "#56b4e9", "#ffffff"];
+    function el(tag, attrs, text) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; return e; }
+    function nice(lo, hi) { var span = hi - lo, step = Math.pow(10, Math.floor(Math.log10(span / 3))); [2, 5, 10].some(function (m) { if (span / (step * m) <= 4) { step *= m; return true; } }); return step; }
+    function path(vals, X, Y) { var d = "", pen = false; vals.forEach(function (v, i) { if (v == null) { pen = false; return; } d += (pen ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1); pen = true; }); return d; }
+    var panels = [];
+    // ---- small multiples
+    var host = document.getElementById("hist-multiples");
+    H.rates.forEach(function (s) {
+      var W = 380, Hh = 190, L = 40, R = 46, T = 34, B = 24;
+      var vals = s.values.filter(function (v) { return v != null; });
+      var lo = Math.min(0, Math.min.apply(null, vals)), hi = Math.max.apply(null, vals), step = nice(lo, hi);
+      lo = Math.floor(lo / step) * step; hi = Math.ceil(hi / step) * step;
+      var X = function (i) { return L + i / (n - 1) * (W - L - R); }, Y = function (v) { return Hh - B - (v - lo) / (hi - lo) * (Hh - T - B); };
+      var svg = el("svg", { viewBox: "0 0 " + W + " " + Hh, role: "img", "aria-label": s.label + ", " + s.unit });
+      svg.appendChild(el("text", { x: 0, y: 13, "font-size": 13.5, fill: "var(--bright)" }, s.label));
+      svg.appendChild(el("text", { x: 0, y: 27, "font-size": 10.5, fill: "var(--muted)" }, s.unit));
+      var read = el("text", { x: W, y: 13, "font-size": 12.5, fill: "var(--accent)", "text-anchor": "end" }, "");
+      svg.appendChild(read);
+      for (var v = lo; v <= hi + 1e-9; v += step) {
+        svg.appendChild(el("line", { x1: L, x2: W - R, y1: Y(v), y2: Y(v), stroke: Math.abs(v) < 1e-9 ? "var(--muted)" : "var(--line)" }));
+        svg.appendChild(el("text", { x: L - 6, y: Y(v) + 4, "font-size": 10.5, fill: "var(--muted)", "text-anchor": "end" }, Math.round(v * 10) / 10 + "%"));
+      }
+      [1980, 1990, 2000, 2010, 2020].forEach(function (y) { svg.appendChild(el("text", { x: X(y - yrs[0]), y: Hh - 6, "font-size": 10.5, fill: "var(--muted)", "text-anchor": "middle" }, y)); });
+      svg.appendChild(el("path", { d: path(s.values, X, Y), fill: "none", stroke: "var(--ink)", "stroke-width": 2, "stroke-linejoin": "round" }));
+      var li = n - 1; while (s.values[li] == null) li--;
+      svg.appendChild(el("circle", { cx: X(li), cy: Y(s.values[li]), r: 4, fill: "var(--accent)" }));
+      svg.appendChild(el("text", { x: X(li) + 7, y: Y(s.values[li]) + 4, "font-size": 11.5, fill: "var(--bright)" }, s.values[li].toFixed(1) + "%"));
+      var cross = el("line", { y1: T, y2: Hh - B, stroke: "var(--accent)", "stroke-width": 1, visibility: "hidden" });
+      var dot = el("circle", { r: 4, fill: "var(--bg)", stroke: "var(--accent)", "stroke-width": 2, visibility: "hidden" });
+      svg.appendChild(cross); svg.appendChild(dot);
+      var hit = el("rect", { x: L, y: T, width: W - L - R, height: Hh - T - B, fill: "transparent" });
+      svg.appendChild(hit);
+      var p = { s: s, X: X, Y: Y, cross: cross, dot: dot, read: read };
+      panels.push(p);
+      function move(ev) {
+        var box = svg.getBoundingClientRect(), px = (ev.clientX - box.left) / box.width * W;
+        var i = Math.max(0, Math.min(n - 1, Math.round((px - L) / (W - L - R) * (n - 1))));
+        panels.forEach(function (q) {
+          var v = q.s.values[i];
+          q.cross.setAttribute("x1", q.X(i)); q.cross.setAttribute("x2", q.X(i)); q.cross.setAttribute("visibility", "visible");
+          q.read.textContent = yrs[i] + ": " + (v == null ? "no data" : v.toFixed(1) + "%");
+          if (v == null) q.dot.setAttribute("visibility", "hidden");
+          else { q.dot.setAttribute("cx", q.X(i)); q.dot.setAttribute("cy", q.Y(v)); q.dot.setAttribute("visibility", "visible"); }
+        });
+      }
+      function leave() { panels.forEach(function (q) { q.cross.setAttribute("visibility", "hidden"); q.dot.setAttribute("visibility", "hidden"); q.read.textContent = ""; }); }
+      hit.addEventListener("mousemove", move); hit.addEventListener("mouseleave", leave);
+      hit.addEventListener("touchstart", function (e) { move(e.touches[0]); }, { passive: true });
+      host.appendChild(svg);
+    });
+    // ---- index chart: one axis, three series, direct labels
+    (function () {
+      var W = 760, Hh = 340, L = 48, R = 170, T = 14, B = 30, hi = 0;
+      H.index.forEach(function (s) { hi = Math.max(hi, Math.max.apply(null, s.values)); });
+      hi = Math.ceil(hi / 100) * 100;
+      var X = function (i) { return L + i / (n - 1) * (W - L - R); }, Y = function (v) { return Hh - B - v / hi * (Hh - T - B); };
+      var svg = el("svg", { viewBox: "0 0 " + W + " " + Hh, role: "img", "aria-label": "Population, real GDP and real GDP per person in Colombia, index 1980 = 100" });
+      for (var v = 0; v <= hi; v += 100) {
+        svg.appendChild(el("line", { x1: L, x2: W - R, y1: Y(v), y2: Y(v), stroke: v === 100 ? "var(--muted)" : "var(--line)", "stroke-dasharray": v === 100 ? "4 4" : "" }));
+        svg.appendChild(el("text", { x: L - 6, y: Y(v) + 4, "font-size": 11.5, fill: "var(--muted)", "text-anchor": "end" }, v));
+      }
+      for (var y = 1980; y <= 2025; y += 5) svg.appendChild(el("text", { x: X(y - yrs[0]), y: Hh - 8, "font-size": 11.5, fill: "var(--muted)", "text-anchor": "middle" }, y));
+      var read = el("text", { x: L + 6, y: T + 12, "font-size": 12, fill: "var(--bright)" }, "");
+      var ends = [];
+      H.index.forEach(function (s, k) {
+        svg.appendChild(el("path", { d: path(s.values, X, Y), fill: "none", stroke: SERIES[k], "stroke-width": 2, "stroke-linejoin": "round" }));
+        var last = s.values[n - 1];
+        svg.appendChild(el("circle", { cx: X(n - 1), cy: Y(last), r: 4, fill: SERIES[k] }));
+        ends.push({ y: Y(last) + 4, text: s.label + " " + Math.round(last) });
+      });
+      // direct labels at the line ends, pushed apart so they never overlap
+      ends.sort(function (a, b) { return a.y - b.y; });
+      for (var e = 1; e < ends.length; e++) if (ends[e].y - ends[e - 1].y < 15) ends[e].y = ends[e - 1].y + 15;
+      ends.forEach(function (d) { svg.appendChild(el("text", { x: X(n - 1) + 9, y: d.y, "font-size": 12, fill: "var(--bright)" }, d.text)); });
+      var cross = el("line", { y1: T, y2: Hh - B, stroke: "var(--muted)", visibility: "hidden" });
+      svg.appendChild(cross); svg.appendChild(read);
+      var hit = el("rect", { x: L, y: T, width: W - L - R, height: Hh - T - B, fill: "transparent" });
+      function move(ev) {
+        var box = svg.getBoundingClientRect(), px = (ev.clientX - box.left) / box.width * W;
+        var i = Math.max(0, Math.min(n - 1, Math.round((px - L) / (W - L - R) * (n - 1))));
+        cross.setAttribute("x1", X(i)); cross.setAttribute("x2", X(i)); cross.setAttribute("visibility", "visible");
+        read.textContent = yrs[i] + ":  " + H.index.map(function (s) { return s.label + " " + Math.round(s.values[i]); }).join("   ");
+      }
+      hit.addEventListener("mousemove", move); hit.addEventListener("touchstart", function (e) { move(e.touches[0]); }, { passive: true });
+      hit.addEventListener("mouseleave", function () { cross.setAttribute("visibility", "hidden"); read.textContent = ""; });
+      svg.appendChild(hit);
+      document.getElementById("hist-index").appendChild(svg);
+    })();
+    // ---- heat map of z-scores: diverging, neutral midpoint
+    (function () {
+      var W = 760, L = 112, R = 8, T = 6, rowH = 26, gap = 2, B = 46, cw = (W - L - R) / n;
+      var Hh = T + H.rates.length * rowH + B;
+      var svg = el("svg", { viewBox: "0 0 " + W + " " + Hh, role: "img", "aria-label": "Heat map of each indicator's distance from its own average, by year" });
+      function colour(z) { var t = Math.min(1, Math.abs(z) / 2.5), a = z >= 0 ? [245, 166, 35] : [86, 180, 233], b = [42, 42, 42];
+        return "rgb(" + a.map(function (c, i) { return Math.round(b[i] + (c - b[i]) * t); }).join(",") + ")"; }
+      H.rates.forEach(function (s, r) {
+        var vals = s.values.filter(function (v) { return v != null; }), m = vals.reduce(function (a, b) { return a + b; }, 0) / vals.length;
+        var sd = Math.sqrt(vals.reduce(function (a, b) { return a + (b - m) * (b - m); }, 0) / vals.length);
+        svg.appendChild(el("text", { x: L - 8, y: T + r * rowH + rowH / 2 + 4, "font-size": 12, fill: "var(--ink)", "text-anchor": "end" }, s.label));
+        s.values.forEach(function (v, i) {
+          if (v == null) return;
+          var z = (v - m) / sd, c = el("rect", { x: L + i * cw + gap / 2, y: T + r * rowH + gap / 2, width: cw - gap, height: rowH - gap, fill: colour(z) });
+          c.appendChild(el("title", {}, s.label + ", " + yrs[i] + ": " + v.toFixed(1) + "% (" + (z >= 0 ? "+" : "") + z.toFixed(1) + " standard deviations)"));
+          svg.appendChild(c);
+        });
+      });
+      var base = T + H.rates.length * rowH;
+      for (var y = 1980; y <= 2025; y += 5) svg.appendChild(el("text", { x: L + (y - yrs[0] + 0.5) * cw, y: base + 15, "font-size": 11.5, fill: "var(--muted)", "text-anchor": "middle" }, y));
+      [-2, -1, 0, 1, 2].forEach(function (z, k) {
+        svg.appendChild(el("rect", { x: L + k * 46, y: base + 26, width: 44, height: 10, fill: colour(z) }));
+        svg.appendChild(el("text", { x: L + k * 46 + 22, y: base + 46, "font-size": 10.5, fill: "var(--muted)", "text-anchor": "middle" }, (z > 0 ? "+" : "") + z));
+      });
+      svg.appendChild(el("text", { x: L + 5 * 46 + 8, y: base + 35, "font-size": 11, fill: "var(--muted)" }, "standard deviations from the indicator's own average"));
+      document.getElementById("hist-heat").appendChild(svg);
+    })();
+  })();
   window.addEventListener("hashchange", show);
   show(null);
 </script>
