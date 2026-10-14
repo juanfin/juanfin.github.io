@@ -25,9 +25,18 @@ Enterprise value / EBITDA for the same seven comparables, with share prices at 3
 
 Sources: U.S. SEC EDGAR for the financials; Yahoo Finance closing prices. This is an illustration of the method, not investment advice.
 
+### 3. DCF
+
+Discounted cash flow valuation of Amazon at 31 December 2025: five projected years in three scenarios, WACC from the CAPM, Gordon growth terminal value and a sensitivity table.
+
+| File | Contents |
+|---|---|
+| [Amazon - DCF Model FY2025.xlsx](<Finance/3. DCF/Amazon - DCF Model FY2025.xlsx>) | Assumptions with a scenario switch, projected free cash flows, WACC, valuation, sensitivity and scenario results |
+
+The projection assumptions are the author's own. This is an illustration of the method, not investment advice.
+
 ### Planned
 
-3. DCF
 4. LBO
 
 ## Economics

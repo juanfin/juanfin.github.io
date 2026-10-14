@@ -61,7 +61,7 @@
   table.range thead tr:first-child th:first-child { text-align: left; }
   table.range td { color: var(--bright); }
   table.range td.amzn { color: var(--accent); }
-  .calc { color: var(--muted); font-size: 13px; margin: 0 0 6px; }
+  .calc, .scroll + .note { color: var(--muted); font-size: 11.5px; line-height: 1.5; margin: 0 0 8px; }
   .files a { display: inline-block; margin: 6px 14px 0 0; color: var(--bright);
              text-decoration-color: var(--accent); text-underline-offset: 5px; }
   .files a::before { content: "\2193  "; color: var(--accent); }
@@ -114,7 +114,7 @@
     <ul class="dash">
       <li><a href="#comparable-company-analysis">1. Comparable Company Analysis</a></li>
       <li><a href="#ebitda-multiples">2. EBITDA Multiples</a></li>
-      <li><a href="#dcf">3. DCF</a> <span class="status">[in progress]</span></li>
+      <li><a href="#dcf">3. DCF</a></li>
       <li><a href="#lbo">4. LBO</a> <span class="status">[in progress]</span></li>
     </ul>
   </section>
@@ -332,8 +332,140 @@
 
   <section class="view" id="dcf">
     <h1>3. DCF</h1>
-    <p class="sub">Finance / discounted cash flow</p>
-    <p><span class="status">[in progress]</span> This model is being built.</p>
+    <p class="sub">Finance / discounted cash flow / valuation date 31 December 2025</p>
+
+    <h2>Objective</h2>
+    <p>The objective of this analysis is to estimate the value of Amazon and a reference value per share by applying the discounted cash flow (DCF) method, and to compare that value with the market price at 31 December 2025.</p>
+
+    <h2>Method</h2>
+    <p>The unlevered free cash flows of the company were projected for five years (2026 to 2030) and discounted at the weighted average cost of capital (WACC). A terminal value was added for the years after 2030, calculated with the Gordon growth model. Debt was then deducted and cash added to the resulting enterprise value to obtain the equity value and the value per share.</p>
+    <dl class="kv">
+      <dt>Company valued</dt><dd>Amazon</dd>
+      <dt>Projection</dt><dd>2026 to 2030, three scenarios: conservative, base and optimistic</dd>
+      <dt>Discount rate</dt><dd>WACC, with the cost of equity from the CAPM</dd>
+      <dt>Sources</dt><dd>U.S. SEC EDGAR, Form 10-K filings; FRED; Yahoo Finance</dd>
+    </dl>
+
+    <h2>Model premises</h2>
+    <p>The premises of the base scenario are presented below, next to the historical figures they start from. Revenue growth, EBIT margin and capital expenditures are the author's assumptions, not company guidance.</p>
+
+    <h3><span>Table 1.</span> Premises of the base scenario</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Premise</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Revenue growth</td><td>11.0%</td><td>12.4%</td><td>11.0%</td><td>10.0%</td><td>9.0%</td><td>8.0%</td><td>7.0%</td></tr>
+          <tr><td>EBIT margin</td><td>10.8%</td><td>11.2%</td><td>12.0%</td><td>12.5%</td><td>13.0%</td><td>13.5%</td><td>14.0%</td></tr>
+          <tr><td>Taxes, % of EBIT</td><td>13.5%</td><td>23.9%</td><td>21.0%</td><td>21.0%</td><td>21.0%</td><td>21.0%</td><td>21.0%</td></tr>
+          <tr><td>D&amp;A, % of sales</td><td>8.3%</td><td>9.2%</td><td>9.0%</td><td>9.0%</td><td>9.0%</td><td>9.0%</td><td>9.0%</td></tr>
+          <tr><td>Capital expenditures, % of sales</td><td>13.0%</td><td>18.4%</td><td>17.0%</td><td>15.0%</td><td>13.0%</td><td>12.0%</td><td>11.0%</td></tr>
+          <tr><td>Investment in NWC, % of change in sales</td><td>1.7%</td><td>5.5%</td><td>3.0%</td><td>3.0%</td><td>3.0%</td><td>3.0%</td><td>3.0%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="calc">2024 and 2025: historical, from Form 10-K filings. 2026 to 2030: own assumptions. Terminal growth rate: 3.0%.</p>
+
+    <h2>Discount rate</h2>
+    <h3><span>Table 2.</span> WACC</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Component</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Risk-free rate (10-year US Treasury, 31 Dec 2025)</td><td>4.18%</td></tr>
+          <tr><td>Beta (60 monthly returns against the S&amp;P 500)</td><td>1.38</td></tr>
+          <tr><td>Equity risk premium (assumption)</td><td>5.00%</td></tr>
+          <tr><td>Cost of equity</td><td>11.08%</td></tr>
+          <tr><td>After-tax cost of debt</td><td>2.61%</td></tr>
+          <tr><td>Equity weight / debt weight, at market value</td><td>97.3% / 2.7%</td></tr>
+          <tr class="tested"><td>WACC</td><td>10.85%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own, from FRED (series DGS10), Yahoo Finance prices and Form 10-K filings.</p>
+
+    <h2>Results</h2>
+    <h3><span>Table 3.</span> Projected free cash flow, base scenario</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>USD millions</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Revenue</td><td>795,786</td><td>875,364</td><td>954,147</td><td>1,030,479</td><td>1,102,612</td></tr>
+          <tr><td>EBIT</td><td>95,494</td><td>109,421</td><td>124,039</td><td>139,115</td><td>154,366</td></tr>
+          <tr><td>EBIT after taxes</td><td>75,440</td><td>86,442</td><td>97,991</td><td>109,901</td><td>121,949</td></tr>
+          <tr class="tested"><td>Unlevered free cash flow</td><td>9,412</td><td>31,533</td><td>57,462</td><td>76,696</td><td>97,733</td></tr>
+          <tr><td>Present value of free cash flow</td><td>8,490</td><td>25,661</td><td>42,183</td><td>50,791</td><td>58,385</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own. Free cash flow is EBIT after taxes plus D&amp;A, less capital expenditures and investment in net working capital.</p>
+
+    <h3><span>Table 4.</span> Estimated value of the company, base scenario</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Concept</th><th>USD millions</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Sum of present value of free cash flows, 2026 to 2030</td><td>185,510</td></tr>
+          <tr><td>Present value of terminal value</td><td>765,796</td></tr>
+          <tr><td>Enterprise value</td><td>951,306</td></tr>
+          <tr><td>Less: total debt</td><td>68,851</td></tr>
+          <tr><td>Plus: cash and short-term investments</td><td>123,029</td></tr>
+          <tr><td>Equity value</td><td>1,005,484</td></tr>
+          <tr class="tested"><td>Value per share (USD)</td><td>92.87</td></tr>
+          <tr><td>Market price, 31 Dec 2025 (USD)</td><td>230.82</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own. The terminal value represents 80.5% of the enterprise value.</p>
+
+    <h3><span>Table 5.</span> Value per share by scenario</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Scenario</th><th>Revenue 2030 (USD m)</th><th>EBIT margin 2030</th><th>Value per share (USD)</th><th>Against market price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Conservative</td><td>1,005,084</td><td>12.0%</td><td>70.75</td><td>-69.3%</td></tr>
+          <tr class="tested"><td>Base</td><td>1,102,612</td><td>14.0%</td><td>92.87</td><td>-59.8%</td></tr>
+          <tr><td>Optimistic</td><td>1,207,568</td><td>16.0%</td><td>117.71</td><td>-49.0%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own.</p>
+
+    <h3><span>Table 6.</span> Sensitivity of the value per share (USD), base scenario</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>WACC \ Terminal growth</th><th>2.0%</th><th>2.5%</th><th>3.0%</th><th>3.5%</th><th>4.0%</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>9.85%</td><td>96.01</td><td>101.38</td><td>107.53</td><td>114.65</td><td>122.98</td></tr>
+          <tr><td>10.35%</td><td>89.78</td><td>94.42</td><td>99.69</td><td>105.73</td><td>112.72</td></tr>
+          <tr class="tested"><td>10.85%</td><td>84.27</td><td>88.31</td><td>92.87</td><td>98.04</td><td>103.98</td></tr>
+          <tr><td>11.35%</td><td>79.36</td><td>82.90</td><td>86.87</td><td>91.35</td><td>96.43</td></tr>
+          <tr><td>11.85%</td><td>74.96</td><td>78.09</td><td>81.57</td><td>85.47</td><td>89.86</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own.</p>
+
+    <h2>Conclusion</h2>
+    <p class="finding">Based on the application of the discounted cash flow method, the value per share of Amazon under the base scenario is USD 92.87, with a range of USD 70.75 to USD 117.71 between the conservative and optimistic scenarios, against a market price of USD 230.82 at 31 December 2025.</p>
+    <p>The value obtained is below the market price in the three scenarios and across the whole sensitivity table. From this it can be inferred that the market price reflects expectations that are more favourable than the premises of this model: higher operating margins, a faster reduction of capital expenditures after the current investment cycle, or a lower discount rate.</p>
+    <p>Two features of the result should be kept in mind. Capital expenditures reached 18.4% of sales in 2025, which leaves little free cash flow in the first projected years, and the terminal value represents 80.5% of the enterprise value, so the result depends heavily on the premises for the years after 2030. The value illustrates the method; it is not a price target or investment advice.</p>
+
+    <h2>Files</h2>
+    <p class="files">
+      <a href="Finance/3.%20DCF/Amazon%20-%20DCF%20Model%20FY2025.xlsx" download>Amazon DCF Model FY2025.xlsx</a>
+    </p>
   </section>
 
   <section class="view" id="lbo">
