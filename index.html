@@ -54,6 +54,14 @@
   tr.stat td { color: var(--muted); }
   tr.stat.first td { border-top: 1px solid var(--muted); }
   .note { color: var(--muted); font-size: 14px; }
+  h3 { color: var(--bright); font-size: 16px; font-weight: normal; margin: 28px 0 6px; }
+  h3 span { color: var(--muted); }
+  table.range { min-width: 520px; }
+  table.range thead tr:first-child th { border-bottom: 1px solid var(--line); text-align: center; }
+  table.range thead tr:first-child th:first-child { text-align: left; }
+  table.range td { color: var(--bright); }
+  table.range td.amzn { color: var(--accent); }
+  .calc { color: var(--muted); font-size: 13px; margin: 0 0 6px; }
   .files a { display: inline-block; margin: 6px 14px 0 0; color: var(--bright);
              text-decoration-color: var(--accent); text-underline-offset: 5px; }
   .files a::before { content: "\2193  "; color: var(--accent); }
@@ -115,18 +123,81 @@
     <h1>1. Comparable Company Analysis</h1>
     <p class="sub">Finance / US technology sector / fiscal year 2025</p>
 
-    <h2>Summary</h2>
+    <h2>Objective</h2>
+    <p>The objective of this analysis is to verify whether the profitability obtained by Amazon in fiscal year 2025 is in line with the profitability obtained by comparable companies in the US technology sector during the same period.</p>
+
+    <h2>Method</h2>
+    <p>Amazon was selected as the tested party. Seven listed US technology companies were selected as comparables, and four profit level indicators were calculated for each company from its audited financial statements.</p>
+    <p>Since it is not possible to adjust for all the differences between the tested party and the comparable companies, the results are based on the interquartile range, which runs from the lower quartile to the upper quartile of the comparables' results, and not on the full range.</p>
     <dl class="kv">
       <dt>Tested party</dt><dd>Amazon</dd>
       <dt>Comparables</dt><dd>Microsoft, Nvidia, Alphabet, Meta Platforms, Apple, Broadcom, ServiceNow</dd>
-      <dt>Ratios</dt><dd>Gross margin, operating margin, ROA, ROE</dd>
+      <dt>Indicators</dt><dd>Gross margin, operating margin, return on assets (ROA), return on equity (ROE)</dd>
       <dt>Source</dt><dd>U.S. SEC EDGAR, Form 10-K filings</dd>
     </dl>
 
-    <h2>Result</h2>
-    <p class="finding">Amazon sits below the interquartile range of the comparables on all four ratios. Its operating margin of 11.2% compares with a median of 39.9%.</p>
+    <h2>Results</h2>
+    <p>The interquartile range of each indicator for the comparable companies is presented below, together with the result obtained by Amazon.</p>
 
-    <h2>Ratios</h2>
+    <h3><span>Table 1.</span> Gross margin</h3>
+    <div class="scroll">
+      <table class="range">
+        <thead>
+          <tr><th>Tested party</th><th>Result</th><th colspan="3">Interquartile range: comparable companies</th></tr>
+          <tr><th></th><th>Gross margin</th><th>Lower quartile</th><th>Median</th><th>Upper quartile</th></tr>
+        </thead>
+        <tbody><tr><td>Amazon</td><td class="amzn">50.3%</td><td>63.7%</td><td>68.8%</td><td>74.3%</td></tr></tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own, from Form 10-K filings.</p>
+    <p>Amazon's gross margin is below the interquartile range of the comparable companies.</p>
+
+    <h3><span>Table 2.</span> Operating margin</h3>
+    <div class="scroll">
+      <table class="range">
+        <thead>
+          <tr><th>Tested party</th><th>Result</th><th colspan="3">Interquartile range: comparable companies</th></tr>
+          <tr><th></th><th>Operating margin</th><th>Lower quartile</th><th>Median</th><th>Upper quartile</th></tr>
+        </thead>
+        <tbody><tr><td>Amazon</td><td class="amzn">11.2%</td><td>32.0%</td><td>39.9%</td><td>43.5%</td></tr></tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own, from Form 10-K filings.</p>
+    <p>Amazon's operating margin is below the interquartile range of the comparable companies.</p>
+
+    <h3><span>Table 3.</span> Return on assets (ROA)</h3>
+    <div class="scroll">
+      <table class="range">
+        <thead>
+          <tr><th>Tested party</th><th>Result</th><th colspan="3">Interquartile range: comparable companies</th></tr>
+          <tr><th></th><th>ROA</th><th>Lower quartile</th><th>Median</th><th>Upper quartile</th></tr>
+        </thead>
+        <tbody><tr><td>Amazon</td><td class="amzn">9.5%</td><td>15.0%</td><td>16.5%</td><td>26.7%</td></tr></tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own, from Form 10-K filings.</p>
+    <p>Amazon's return on assets is below the interquartile range of the comparable companies.</p>
+
+    <h3><span>Table 4.</span> Return on equity (ROE)</h3>
+    <div class="scroll">
+      <table class="range">
+        <thead>
+          <tr><th>Tested party</th><th>Result</th><th colspan="3">Interquartile range: comparable companies</th></tr>
+          <tr><th></th><th>ROE</th><th>Lower quartile</th><th>Median</th><th>Upper quartile</th></tr>
+        </thead>
+        <tbody><tr><td>Amazon</td><td class="amzn">18.9%</td><td>28.1%</td><td>29.6%</td><td>54.1%</td></tr></tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own, from Form 10-K filings.</p>
+    <p>Amazon's return on equity is below the interquartile range of the comparable companies.</p>
+
+    <h2>Conclusion</h2>
+    <p class="finding">Based on the results obtained, it was possible to verify that the four profit level indicators of Amazon for fiscal year 2025 are below the interquartile range of the comparable companies.</p>
+    <p>From this it can be inferred that, during fiscal year 2025, Amazon obtained a lower profitability than the selected comparable companies, both on its sales (gross and operating margin) and on the resources it employs (ROA and ROE).</p>
+    <p>This result should be read together with the differences in business mix that could not be adjusted: a large part of Amazon's revenue comes from retail, an activity with lower margins than the software and semiconductor activities of most of the comparable companies.</p>
+
+    <h2>Comparable companies</h2>
+    <p>The individual results of the tested party and of each comparable company are presented below.</p>
     <div class="scroll">
       <table>
         <thead>
@@ -160,19 +231,77 @@
     <h1>2. EBITDA Multiples</h1>
     <p class="sub">Finance / US technology sector / prices at 31 December 2025</p>
 
-    <h2>Summary</h2>
+    <h2>Objective</h2>
+    <p>The objective of this analysis is to estimate a reference value per share for Amazon by applying the EBITDA multiple valuation method, and to verify whether the multiple at which Amazon trades is in line with the multiples of comparable companies in the US technology sector.</p>
+
+    <h2>Method</h2>
+    <p>The enterprise value to EBITDA multiple (EV / EBITDA) was calculated for Amazon and for seven comparable companies, using closing share prices at 31 December 2025 and the financial statements for fiscal year 2025. The interquartile range of the comparables' multiples was then applied to Amazon's EBITDA to obtain an implied enterprise value, equity value and value per share.</p>
     <dl class="kv">
-      <dt>Target</dt><dd>Amazon</dd>
+      <dt>Company valued</dt><dd>Amazon</dd>
       <dt>Comparables</dt><dd>Microsoft, Nvidia, Alphabet, Meta Platforms, Apple, Broadcom, ServiceNow</dd>
-      <dt>Method</dt><dd>Enterprise value / EBITDA of the comparables, applied to Amazon's EBITDA</dd>
+      <dt>Multiples</dt><dd>EV / EBITDA, with EV / Revenue as a cross-check</dd>
       <dt>Sources</dt><dd>U.S. SEC EDGAR, Form 10-K filings; Yahoo Finance closing prices</dd>
     </dl>
 
-    <h2>Result</h2>
-    <p class="finding">Amazon trades at 16.8x EBITDA, below the comparables' interquartile range of 23.9x to 42.5x. At the median multiple of 28.5x, the implied share price is USD 388, against an actual price of USD 231.</p>
-    <p class="note">Amazon's business mix (retail, cloud, advertising) differs from the comparables, which are mostly software and semiconductor companies. The implied value illustrates the method; it is not a price target or investment advice.</p>
+    <h2>Results</h2>
+    <p>The interquartile range of each multiple for the comparable companies is presented below, together with the multiple obtained by Amazon.</p>
 
-    <h2>Multiples</h2>
+    <h3><span>Table 1.</span> EV / EBITDA</h3>
+    <div class="scroll">
+      <table class="range">
+        <thead>
+          <tr><th>Company valued</th><th>Result</th><th colspan="3">Interquartile range: comparable companies</th></tr>
+          <tr><th></th><th>EV / EBITDA</th><th>Lower quartile</th><th>Median</th><th>Upper quartile</th></tr>
+        </thead>
+        <tbody><tr><td>Amazon</td><td class="amzn">16.8x</td><td>23.9x</td><td>28.5x</td><td>42.5x</td></tr></tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own, from Form 10-K filings and closing prices at 31 December 2025.</p>
+    <p>Amazon's EV / EBITDA multiple is below the interquartile range of the comparable companies.</p>
+
+    <h3><span>Table 2.</span> EV / Revenue</h3>
+    <div class="scroll">
+      <table class="range">
+        <thead>
+          <tr><th>Company valued</th><th>Result</th><th colspan="3">Interquartile range: comparable companies</th></tr>
+          <tr><th></th><th>EV / Revenue</th><th>Lower quartile</th><th>Median</th><th>Upper quartile</th></tr>
+        </thead>
+        <tbody><tr><td>Amazon</td><td class="amzn">3.4x</td><td>9.6x</td><td>11.7x</td><td>16.9x</td></tr></tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own, from Form 10-K filings and closing prices at 31 December 2025.</p>
+    <p>Amazon's EV / Revenue multiple is below the interquartile range of the comparable companies.</p>
+
+    <h3><span>Table 3.</span> Value per share of Amazon</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>EV / EBITDA applied</th><th>Lower quartile</th><th>Median</th><th>Upper quartile</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Multiple</td><td>23.9x</td><td>28.5x</td><td>42.5x</td></tr>
+          <tr><td>Amazon EBITDA (USD m)</td><td>145,731</td><td>145,731</td><td>145,731</td></tr>
+          <tr><td>Implied enterprise value (USD m)</td><td>3,476,029</td><td>4,151,137</td><td>6,190,750</td></tr>
+          <tr><td>Implied equity value (USD m)</td><td>3,530,207</td><td>4,205,315</td><td>6,244,928</td></tr>
+          <tr class="tested"><td>Implied value per share (USD)</td><td>326.06</td><td>388.41</td><td>576.79</td></tr>
+          <tr><td>Market price, 31 Dec 2025 (USD)</td><td>230.82</td><td>230.82</td><td>230.82</td></tr>
+          <tr><td>Implied value against market price</td><td>+41.3%</td><td>+68.3%</td><td>+149.9%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="calc">Calculations: own. Implied equity value is implied enterprise value less net debt; Amazon held more cash than debt.</p>
+
+    <h2>Conclusion</h2>
+    <p class="finding">Based on the application of the EBITDA multiple valuation method, it was possible to verify that Amazon's multiple of 16.8x is below the interquartile range of the comparable companies (23.9x to 42.5x). Applying that range to Amazon's EBITDA gives a value per share between USD 326.06 and USD 576.79, with USD 388.41 at the median, against a market price of USD 230.82.</p>
+    <p>A multiple below the range of the comparable companies can be read in two ways:</p>
+    <ul class="dash">
+      <li>The first, that the share is undervalued against its sector, in which case the median of the comparables would be the reference for its value.</li>
+      <li>The second, that the lower multiple reflects lower expected margins and growth than those of the comparable companies, in which case the company's own multiple is the appropriate reference.</li>
+    </ul>
+    <p style="margin-top:16px">Given that Amazon's EBITDA margin (20.3%) is well below the median of the comparables (50.7%), and that most of them are software and semiconductor companies, the second reading carries more weight here. The implied value illustrates the method; it is not a price target or investment advice.</p>
+
+    <h2>Comparable companies</h2>
+    <p>The individual results of Amazon and of each comparable company are presented below.</p>
     <div class="scroll">
       <table>
         <thead>
@@ -194,23 +323,6 @@
       </table>
     </div>
     <p class="note">USD millions. Enterprise value is market capitalization plus debt, less cash and short-term investments. EBITDA is operating income plus depreciation and amortization for each company's fiscal year 2025.</p>
-
-    <h2>Implied valuation of Amazon</h2>
-    <div class="scroll">
-      <table>
-        <thead>
-          <tr><th>EV / EBITDA applied</th><th>Lower quartile</th><th>Median</th><th>Upper quartile</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Multiple</td><td>23.9x</td><td>28.5x</td><td>42.5x</td></tr>
-          <tr><td>Implied enterprise value (USD m)</td><td>3,476,029</td><td>4,151,137</td><td>6,190,750</td></tr>
-          <tr><td>Implied equity value (USD m)</td><td>3,530,207</td><td>4,205,315</td><td>6,244,928</td></tr>
-          <tr class="tested"><td>Implied share price (USD)</td><td>326.06</td><td>388.41</td><td>576.79</td></tr>
-          <tr><td>Actual share price, 31 Dec 2025 (USD)</td><td>230.82</td><td>230.82</td><td>230.82</td></tr>
-          <tr><td>Implied against actual</td><td>+41.3%</td><td>+68.3%</td><td>+149.9%</td></tr>
-        </tbody>
-      </table>
-    </div>
 
     <h2>Files</h2>
     <p class="files">
