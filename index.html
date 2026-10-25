@@ -92,6 +92,14 @@
   .tl-row i { width: 9px; height: 9px; border-radius: 50%; margin-top: 8px; }
   .tl-row b { color: var(--bright); font-weight: normal; }
   .tl-row span { color: var(--muted); }
+  .tl-chart svg { width: 100%; height: auto; display: block; font-family: inherit; }
+  .tl-chart .era, .tl-chart .dot { cursor: pointer; }
+  .tl-detail { border-left: 2px solid var(--accent); padding: 4px 0 4px 16px; margin: 10px 0 8px; min-height: 52px; }
+  .tl-detail b { color: var(--bright); font-weight: normal; }
+  .tl-detail span { color: var(--muted); font-size: 13px; display: block; }
+  .tl-row em { font-style: normal; color: var(--bright); font-size: 12px; margin-left: 6px; }
+  .chip.ring::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; border: 2px solid var(--bright); margin-right: 7px; vertical-align: -1px; }
+  .chip.ring[aria-pressed="false"] { color: var(--muted); }
   .calc, .scroll + .note { color: var(--muted); font-size: 11.5px; line-height: 1.5; margin: 0 0 8px; }
   .files a { display: inline-block; margin: 6px 14px 0 0; color: var(--bright);
              text-decoration-color: var(--accent); text-underline-offset: 5px; }
@@ -121,7 +129,8 @@
 <span class="g">│   ├── </span><a href="#gini-and-lorenz-curve">2. Gini and Lorenz Curve</a>
 <span class="g">│   └── </span><a href="#historical-indicators">3. Historical Indicators</a>
 <span class="g">└── </span><a class="dir" href="#history">History</a> <span class="g">/</span>
-<span class="g">    └── </span><a href="#world-history-timeline">1. World History Timeline</a>
+<span class="g">    ├── </span><a href="#world-history-timeline">1. World History Timeline</a>
+<span class="g">    └── </span><a href="#economic-thought-timeline">2. Economic Thought Timeline</a>
 </nav>
 
 <main>
@@ -1085,6 +1094,7 @@
     <h2>Models</h2>
     <ul class="dash">
       <li><a href="#world-history-timeline">1. World History Timeline</a></li>
+      <li><a href="#economic-thought-timeline">2. Economic Thought Timeline</a></li>
     </ul>
   </section>
 
@@ -1138,6 +1148,47 @@
     <script type="application/json" id="tl-data">{"cats":[{"key":"states","label":"States and empires","color":"#f5a623"},{"key":"wars","label":"Wars and revolutions","color":"#ef5b5b"},{"key":"religion","label":"Religion","color":"#c792ea"},{"key":"ideas","label":"Philosophy and ideas","color":"#ffffff"},{"key":"science","label":"Science","color":"#56b4e9"},{"key":"tech","label":"Technology","color":"#5ad19a"},{"key":"economy","label":"Economy and society","color":"#ffd75e"}],"eras":[{"name":"Ancient world","a":-3500,"b":-800},{"name":"Classical age","a":-800,"b":500},{"name":"Middle Ages","a":500,"b":1450},{"name":"Early modern","a":1450,"b":1750},{"name":"Age of revolutions","a":1750,"b":1914},{"name":"Contemporary","a":1914,"b":2026}],"events":[{"y":-3500,"c":1,"k":"states","t":"Sumerian city-states","d":"Uruk and other cities of Mesopotamia become the first urban societies.","m":1},{"y":-3500,"c":1,"k":"tech","t":"The wheel","d":"Wheeled vehicles appear in Mesopotamia and the Eurasian steppe.","m":0},{"y":-3300,"c":1,"k":"tech","t":"Writing","d":"Cuneiform in Sumer and hieroglyphs in Egypt: history begins to be recorded.","m":1},{"y":-3100,"c":1,"k":"states","t":"Egypt unified","d":"Upper and Lower Egypt are joined under the first pharaohs.","m":0},{"y":-2334,"c":1,"k":"states","t":"Akkadian Empire","d":"Sargon of Akkad builds the first known empire in Mesopotamia.","m":0},{"y":-1754,"c":1,"k":"states","t":"Code of Hammurabi","d":"Babylon sets out one of the earliest written codes of law.","m":1},{"y":-1500,"c":1,"k":"religion","t":"The Vedas","d":"The oldest scriptures of Hinduism are composed in India.","m":0},{"y":-1200,"c":1,"k":"wars","t":"Trojan War","d":"Traditional date of the war later told in Greek epic poetry.","m":1},{"y":-1200,"c":1,"k":"tech","t":"Iron Age","d":"Iron tools and weapons spread across the Near East and the Mediterranean.","m":0},{"y":-750,"c":1,"k":"ideas","t":"Homer","d":"The Iliad and the Odyssey: the foundation of Greek epic poetry.","m":1},{"y":-600,"c":1,"k":"economy","t":"First coins","d":"Lydia mints the first standardized metal coins.","m":1},{"y":-586,"c":0,"k":"religion","t":"Babylonian exile","d":"Jerusalem falls and the people of Judah are deported to Babylon.","m":0},{"y":-551,"c":0,"k":"ideas","t":"Confucius","d":"Birth of the thinker whose ethics shaped Chinese society and government.","m":0},{"y":-550,"c":0,"k":"states","t":"Persian Empire","d":"Cyrus the Great founds the largest empire the world had yet seen.","m":0},{"y":-490,"c":0,"k":"wars","t":"Persian Wars","d":"The Greek cities resist Persia at Marathon and, later, Salamis.","m":0},{"y":-480,"c":1,"k":"religion","t":"The Buddha","d":"Siddhartha Gautama teaches in northern India; Buddhism begins.","m":1},{"y":-431,"c":0,"k":"wars","t":"Peloponnesian War","d":"Athens and Sparta fight for supremacy in Greece.","m":0},{"y":-399,"c":0,"k":"ideas","t":"Socrates","d":"Tried and executed in Athens; his method founds Western philosophy.","m":1},{"y":-387,"c":1,"k":"ideas","t":"Plato's Academy","d":"Plato founds his school in Athens and writes the Republic.","m":0},{"y":-336,"c":0,"k":"states","t":"Alexander the Great","d":"His conquests spread Greek culture from Egypt to India.","m":1},{"y":-335,"c":0,"k":"ideas","t":"Aristotle","d":"Founds the Lyceum; systematizes logic, ethics, politics and natural science.","m":0},{"y":-300,"c":1,"k":"science","t":"Euclid's Elements","d":"Geometry is organized as a system of proofs.","m":1},{"y":-264,"c":0,"k":"wars","t":"Punic Wars","d":"Rome and Carthage fight for control of the western Mediterranean.","m":0},{"y":-240,"c":1,"k":"science","t":"Eratosthenes","d":"Measures the circumference of the Earth with shadows and geometry.","m":0},{"y":-221,"c":0,"k":"states","t":"China unified","d":"The Qin dynasty creates the first Chinese empire.","m":0},{"y":-130,"c":1,"k":"economy","t":"Silk Road","d":"Han China opens the trade routes that link Asia and the Mediterranean.","m":0},{"y":-27,"c":0,"k":"states","t":"Roman Empire","d":"Augustus becomes the first emperor; Rome rules the Mediterranean.","m":1},{"y":-4,"c":1,"k":"religion","t":"Birth of Jesus","d":"The life and teaching from which Christianity arises.","m":1},{"y":105,"c":1,"k":"tech","t":"Paper","d":"Papermaking is recorded at the Han court in China.","m":0},{"y":150,"c":1,"k":"science","t":"Ptolemy","d":"The Almagest fixes the Earth-centred model of the heavens for 1,400 years.","m":0},{"y":313,"c":0,"k":"religion","t":"Edict of Milan","d":"Christianity is tolerated in the Roman Empire.","m":0},{"y":476,"c":0,"k":"states","t":"Fall of Rome","d":"The Western Roman Empire ends; the Middle Ages begin in Europe.","m":1},{"y":527,"c":0,"k":"states","t":"Byzantine Empire","d":"Under Justinian, the eastern empire dominates the Mediterranean.","m":0},{"y":622,"c":0,"k":"religion","t":"Rise of Islam","d":"The Hijra: Muhammad moves to Medina and the Islamic calendar begins.","m":1},{"y":800,"c":0,"k":"states","t":"Charlemagne","d":"Crowned emperor in Rome; a new empire in western Europe.","m":0},{"y":820,"c":1,"k":"science","t":"Algebra","d":"Al-Khwarizmi writes the treatise that gives algebra its name.","m":0},{"y":830,"c":1,"k":"ideas","t":"Islamic Golden Age","d":"The House of Wisdom in Baghdad translates and extends ancient knowledge.","m":1},{"y":850,"c":1,"k":"tech","t":"Gunpowder","d":"First described by alchemists in China.","m":0},{"y":1021,"c":1,"k":"science","t":"Book of Optics","d":"Ibn al-Haytham studies light through experiment.","m":0},{"y":1054,"c":0,"k":"religion","t":"East-West Schism","d":"The Catholic and Orthodox churches separate.","m":0},{"y":1088,"c":0,"k":"ideas","t":"First university","d":"The University of Bologna is founded.","m":0},{"y":1095,"c":0,"k":"wars","t":"The Crusades","d":"The First Crusade is called; two centuries of wars for the Holy Land.","m":1},{"y":1206,"c":0,"k":"states","t":"Mongol Empire","d":"Genghis Khan unites the Mongols; the largest land empire in history.","m":1},{"y":1215,"c":0,"k":"states","t":"Magna Carta","d":"The English king accepts limits on his power.","m":0},{"y":1337,"c":0,"k":"wars","t":"Hundred Years' War","d":"England and France fight over the French crown.","m":0},{"y":1347,"c":0,"k":"economy","t":"Black Death","d":"The plague kills a large part of Europe's population.","m":1},{"y":1420,"c":1,"k":"ideas","t":"Renaissance","d":"Florence leads a revival of art and learning based on antiquity.","m":1},{"y":1440,"c":1,"k":"tech","t":"Printing press","d":"Gutenberg's movable type makes books cheap and knowledge portable.","m":1},{"y":1453,"c":0,"k":"states","t":"Fall of Constantinople","d":"The Ottomans take the city; the Byzantine Empire ends.","m":0},{"y":1492,"c":0,"k":"states","t":"Columbus in America","d":"Europe and the Americas come into lasting contact.","m":1},{"y":1517,"c":0,"k":"religion","t":"Reformation","d":"Luther's theses divide Western Christianity.","m":1},{"y":1521,"c":0,"k":"states","t":"Fall of Tenochtitlan","d":"The Spanish conquer the Aztec Empire.","m":0},{"y":1543,"c":0,"k":"science","t":"Copernicus","d":"The Sun, not the Earth, is placed at the centre.","m":1},{"y":1602,"c":0,"k":"economy","t":"First stock exchange","d":"The Dutch East India Company sells shares in Amsterdam.","m":1},{"y":1610,"c":0,"k":"science","t":"Galileo","d":"Telescope observations support the Copernican system.","m":0},{"y":1618,"c":0,"k":"wars","t":"Thirty Years' War","d":"Religious and dynastic war devastates central Europe.","m":0},{"y":1637,"c":0,"k":"ideas","t":"Descartes","d":"The Discourse on Method: reason as the basis of knowledge.","m":0},{"y":1648,"c":0,"k":"states","t":"Peace of Westphalia","d":"The modern system of sovereign states takes shape.","m":0},{"y":1687,"c":0,"k":"science","t":"Newton","d":"The Principia: laws of motion and universal gravitation.","m":1},{"y":1689,"c":0,"k":"ideas","t":"Locke and rights","d":"The English Bill of Rights and Locke's theory of government by consent.","m":0},{"y":1694,"c":0,"k":"economy","t":"Bank of England","d":"A model for central banking and public debt.","m":0},{"y":1751,"c":0,"k":"ideas","t":"Enlightenment","d":"The Encyclopedie gathers the knowledge and criticism of the age.","m":1},{"y":1760,"c":1,"k":"economy","t":"Industrial Revolution","d":"Machines and factories transform production, first in Britain.","m":1},{"y":1769,"c":0,"k":"tech","t":"Steam engine","d":"Watt's patent makes steam power efficient.","m":0},{"y":1776,"c":0,"k":"wars","t":"American Revolution","d":"The thirteen colonies declare independence.","m":1},{"y":1776,"c":0,"k":"economy","t":"The Wealth of Nations","d":"Adam Smith founds modern economics.","m":0},{"y":1789,"c":0,"k":"wars","t":"French Revolution","d":"The old regime falls; rights of man and citizen.","m":1},{"y":1796,"c":0,"k":"science","t":"Vaccination","d":"Jenner tests the smallpox vaccine.","m":0},{"y":1810,"c":0,"k":"wars","t":"Spanish American independence","d":"Independence movements begin from Mexico to the River Plate.","m":0},{"y":1848,"c":0,"k":"ideas","t":"Communist Manifesto","d":"Marx and Engels publish it in a year of European revolutions.","m":0},{"y":1859,"c":0,"k":"science","t":"Darwin","d":"On the Origin of Species: evolution by natural selection.","m":1},{"y":1861,"c":0,"k":"wars","t":"American Civil War","d":"The Union defeats the Confederacy; slavery is abolished.","m":0},{"y":1869,"c":0,"k":"science","t":"Periodic table","d":"Mendeleev orders the chemical elements.","m":0},{"y":1879,"c":0,"k":"tech","t":"Electric light","d":"Edison's practical lamp opens the age of electricity.","m":1},{"y":1903,"c":0,"k":"tech","t":"First flight","d":"The Wright brothers fly a powered aeroplane.","m":0},{"y":1905,"c":0,"k":"science","t":"Einstein","d":"Special relativity; general relativity follows in 1915.","m":1},{"y":1914,"c":0,"k":"wars","t":"World War I","d":"Four years of industrial war end four empires.","m":1},{"y":1917,"c":0,"k":"wars","t":"Russian Revolution","d":"The Bolsheviks take power; the Soviet state is born.","m":0},{"y":1928,"c":0,"k":"science","t":"Penicillin","d":"Fleming discovers the first antibiotic.","m":0},{"y":1929,"c":0,"k":"economy","t":"Great Depression","d":"The Wall Street crash begins a decade of worldwide slump.","m":1},{"y":1939,"c":0,"k":"wars","t":"World War II","d":"The deadliest conflict in history, ending in 1945.","m":1},{"y":1944,"c":0,"k":"economy","t":"Bretton Woods","d":"The post-war monetary order, the IMF and the World Bank.","m":0},{"y":1945,"c":0,"k":"tech","t":"Atomic bomb","d":"Nuclear weapons are used on Hiroshima and Nagasaki.","m":0},{"y":1945,"c":0,"k":"states","t":"United Nations","d":"Founded by 51 states after the war.","m":1},{"y":1947,"c":0,"k":"states","t":"Independence of India","d":"The largest step in the decolonization of Asia and Africa.","m":0},{"y":1947,"c":0,"k":"wars","t":"Cold War","d":"The United States and the Soviet Union divide the world into blocs.","m":0},{"y":1948,"c":0,"k":"ideas","t":"Human rights","d":"The Universal Declaration of Human Rights is adopted.","m":1},{"y":1953,"c":0,"k":"science","t":"DNA","d":"The double-helix structure is described.","m":1},{"y":1957,"c":0,"k":"tech","t":"Sputnik","d":"The first artificial satellite opens the space age.","m":0},{"y":1969,"c":0,"k":"tech","t":"Moon landing","d":"Apollo 11: humans walk on another world.","m":1},{"y":1989,"c":0,"k":"wars","t":"Fall of the Berlin Wall","d":"The division of Europe ends.","m":1},{"y":1989,"c":0,"k":"tech","t":"World Wide Web","d":"Tim Berners-Lee proposes the web at CERN.","m":1},{"y":1991,"c":0,"k":"states","t":"End of the Soviet Union","d":"The USSR dissolves into fifteen states.","m":0},{"y":1993,"c":0,"k":"states","t":"European Union","d":"The Maastricht Treaty enters into force.","m":0},{"y":1999,"c":0,"k":"economy","t":"The euro","d":"Eleven countries adopt a single currency.","m":0},{"y":2001,"c":0,"k":"wars","t":"September 11","d":"Attacks in the United States open two decades of wars.","m":0},{"y":2003,"c":0,"k":"science","t":"Human genome","d":"The first full sequence is completed.","m":0},{"y":2007,"c":0,"k":"tech","t":"Smartphone","d":"The iPhone puts the internet in every pocket.","m":0},{"y":2008,"c":0,"k":"economy","t":"Global financial crisis","d":"The worst financial collapse since 1929.","m":1},{"y":2020,"c":0,"k":"economy","t":"COVID-19 pandemic","d":"A global health emergency halts the world economy.","m":1},{"y":2022,"c":0,"k":"tech","t":"Generative AI","d":"Language models reach the general public.","m":1}]}</script>
   </section>
 
+
+  <section class="view" id="economic-thought-timeline">
+    <h1>2. Economic Thought Timeline</h1>
+    <p class="sub">History / 63 economists and ideas in nine schools / from Aristotle to today</p>
+
+    <h2>Objective</h2>
+    <p>The objective of this visualization is to place the main economists, theories and doctrines on one chronological axis, grouped by school of thought, to show how each idea answered the problems and debates of its time.</p>
+
+    <h2>Method</h2>
+    <ul class="dash read">
+      <li><b>One lane per school:</b> from the thinkers before economics existed as a discipline to the contemporary fields of games, information and behaviour. Each point is an author and a work, with its central idea in one sentence.</li>
+      <li><b>An axis that changes scale by era:</b> six periods of equal width, from antiquity to the present. Clicking an era zooms into it and labels every point.</li>
+      <li><b>My course readings:</b> the 17 points with a white ring are the texts read in my Economic Doctrines course. The filter shows them alone.</li>
+    </ul>
+
+    <h2>Timeline</h2>
+    <div class="tl">
+      <div class="chips" aria-label="Schools of thought"></div>
+      <div class="tl-chart"></div>
+      <div class="tl-detail" aria-live="polite"></div>
+      <p class="calc">Each point is one author and work. The overview labels only the main ones; zoom into an era to label all. Selection and wording: own.</p>
+      <h2>Authors and ideas</h2>
+      <p class="calc tl-count"></p>
+      <div class="tl-list"></div>
+      <script type="application/json" class="tl-data">{"title":"Timeline of economic thought by school","noun":"ideas","courseLabel":"read in my Economic Doctrines course","courseFilter":"Only my course readings","cats":[{"key":"pre","label":"Before economics","color":"#9aa0a6"},{"key":"merc","label":"Mercantilists and physiocrats","color":"#ffd75e"},{"key":"classical","label":"Classical school","color":"#f5a623"},{"key":"marx","label":"Marxian and institutional","color":"#ef5b5b"},{"key":"neo","label":"Marginalist and neoclassical","color":"#56b4e9"},{"key":"keynes","label":"Keynesian","color":"#5ad19a"},{"key":"liberal","label":"Austrian, monetarist, new classical","color":"#c792ea"},{"key":"dev","label":"Development economics","color":"#ff8fb1"},{"key":"micro","label":"Games, information, behaviour","color":"#d4b483"}],"eras":[{"name":"Before 1500","a":-400,"b":1500},{"name":"Mercantilism","a":1500,"b":1750},{"name":"Classical","a":1750,"b":1870},{"name":"Neoclassical","a":1870,"b":1936},{"name":"Keynesian era","a":1936,"b":1970},{"name":"Contemporary","a":1970,"b":2026}],"events":[{"y":-350,"c":1,"k":"pre","t":"Aristotle","d":"Separates household management from money-making and distinguishes use value from exchange value.","m":1,"r":0},{"y":1270,"c":1,"k":"pre","t":"Aquinas","d":"The just price and the condemnation of usury in scholastic thought.","m":0,"r":0},{"y":1377,"c":0,"k":"pre","t":"Ibn Khaldun","d":"The Muqaddimah links the division of labour, taxes and the rise and fall of states.","m":1,"r":0},{"y":1556,"c":0,"k":"pre","t":"School of Salamanca","d":"Azpilcueta explains that American silver lowers the value of money: an early quantity theory.","m":0,"r":0},{"y":1568,"c":0,"k":"merc","t":"Bodin","d":"Attributes the rise in European prices to the inflow of gold and silver.","m":0,"r":0},{"y":1662,"c":0,"k":"merc","t":"Petty","d":"Treatise of Taxes: measurement and political arithmetic.","m":0,"r":0},{"y":1664,"c":0,"k":"merc","t":"Mun","d":"England's Treasure by Foreign Trade: wealth comes from a trade surplus.","m":1,"r":0},{"y":1665,"c":0,"k":"merc","t":"Colbert","d":"State-led industry and trade policy in France.","m":0,"r":0},{"y":1752,"c":0,"k":"merc","t":"Hume","d":"The price-specie flow: a trade surplus raises prices and corrects itself.","m":0,"r":0},{"y":1755,"c":0,"k":"merc","t":"Cantillon","d":"The entrepreneur bears uncertainty; new money changes relative prices.","m":0,"r":0},{"y":1758,"c":0,"k":"merc","t":"Quesnay","d":"The Tableau economique: the first model of the circular flow of income.","m":1,"r":0},{"y":1776,"c":0,"k":"classical","t":"Smith","d":"The Wealth of Nations: division of labour, the invisible hand and free trade.","m":1,"r":1},{"y":1791,"c":0,"k":"dev","t":"Hamilton","d":"Report on Manufactures: protection for infant industries.","m":0,"r":1},{"y":1798,"c":0,"k":"classical","t":"Malthus","d":"Population grows faster than the means of subsistence.","m":1,"r":0},{"y":1803,"c":0,"k":"classical","t":"Say","d":"Supply creates its own demand: general gluts are impossible.","m":0,"r":0},{"y":1817,"c":0,"k":"classical","t":"Ricardo","d":"Comparative advantage and the theory of rent.","m":1,"r":0},{"y":1841,"c":0,"k":"dev","t":"List","d":"The National System: industrialize behind tariffs before opening to trade.","m":0,"r":0},{"y":1848,"c":0,"k":"classical","t":"J. S. Mill","d":"Principles of Political Economy: the classical synthesis, money and credit cycles.","m":0,"r":1},{"y":1848,"c":0,"k":"marx","t":"Communist Manifesto","d":"Marx and Engels: class struggle as the engine of history.","m":0,"r":1},{"y":1859,"c":0,"k":"marx","t":"Marx, Critique","d":"The economic base conditions the political and legal superstructure.","m":0,"r":1},{"y":1867,"c":0,"k":"marx","t":"Marx, Capital","d":"Surplus value, accumulation and the crises of capitalism.","m":1,"r":0},{"y":1871,"c":0,"k":"neo","t":"Jevons and Menger","d":"The marginal revolution: value comes from marginal utility.","m":1,"r":0},{"y":1874,"c":0,"k":"neo","t":"Walras","d":"General equilibrium: all markets clear at once.","m":0,"r":0},{"y":1890,"c":0,"k":"neo","t":"Marshall","d":"Principles of Economics: supply, demand and partial equilibrium.","m":1,"r":0},{"y":1899,"c":0,"k":"marx","t":"Veblen","d":"The Theory of the Leisure Class: conspicuous consumption; institutional economics.","m":0,"r":0},{"y":1906,"c":0,"k":"neo","t":"Pareto","d":"Pareto efficiency: no one can gain without someone losing.","m":0,"r":0},{"y":1911,"c":0,"k":"neo","t":"Fisher","d":"The equation of exchange: MV = PT.","m":0,"r":0},{"y":1911,"c":0,"k":"marx","t":"Schumpeter, Development","d":"The entrepreneur and innovation drive economic development.","m":0,"r":0},{"y":1928,"c":0,"k":"neo","t":"Allyn Young","d":"Increasing returns and economic progress.","m":0,"r":1},{"y":1930,"c":0,"k":"keynes","t":"Keynes, Grandchildren","d":"Economic Possibilities for our Grandchildren: growth could solve the economic problem.","m":0,"r":1},{"y":1932,"c":0,"k":"neo","t":"Robbins","d":"Economics as the allocation of scarce means between alternative ends.","m":0,"r":1},{"y":1933,"c":0,"k":"neo","t":"Joan Robinson","d":"Imperfect competition between the extremes of monopoly and competition.","m":0,"r":0},{"y":1936,"c":0,"k":"keynes","t":"Keynes, General Theory","d":"Effective demand: unemployment can persist; the state should stabilize demand.","m":1,"r":1},{"y":1937,"c":0,"k":"keynes","t":"Hicks, IS-LM","d":"The Keynesian model in two curves, the standard of macroeconomics teaching.","m":0,"r":0},{"y":1942,"c":0,"k":"marx","t":"Schumpeter, Capitalism","d":"Capitalism, Socialism and Democracy: creative destruction.","m":1,"r":1},{"y":1944,"c":0,"k":"micro","t":"Game theory","d":"Von Neumann and Morgenstern: the theory of games and economic behaviour.","m":1,"r":0},{"y":1945,"c":0,"k":"liberal","t":"Hayek","d":"The Use of Knowledge in Society: prices carry dispersed information.","m":1,"r":0},{"y":1948,"c":0,"k":"keynes","t":"Samuelson","d":"Economics: the neoclassical synthesis of Keynes and the market.","m":0,"r":0},{"y":1949,"c":0,"k":"dev","t":"Currie in Colombia","d":"Lauchlin Currie leads the first World Bank mission, to Colombia.","m":0,"r":0},{"y":1950,"c":0,"k":"dev","t":"Prebisch","d":"ECLAC: falling terms of trade justify industrialization in Latin America.","m":1,"r":0},{"y":1950,"c":0,"k":"micro","t":"Nash","d":"The Nash equilibrium in non-cooperative games.","m":0,"r":0},{"y":1950,"c":0,"k":"neo","t":"Viner","d":"The Customs Union Issue: trade creation and trade diversion.","m":0,"r":1},{"y":1953,"c":0,"k":"liberal","t":"Friedman, Method","d":"The Methodology of Positive Economics: judge theories by their predictions.","m":0,"r":1},{"y":1954,"c":0,"k":"dev","t":"Lewis","d":"Development with unlimited supplies of labour: the dual economy.","m":0,"r":1},{"y":1956,"c":0,"k":"keynes","t":"Solow","d":"The growth model: technology explains long-run growth.","m":1,"r":0},{"y":1958,"c":0,"k":"keynes","t":"Phillips curve","d":"Lower unemployment goes with faster wage inflation.","m":1,"r":0},{"y":1958,"c":0,"k":"dev","t":"Hirschman, Strategy","d":"Unbalanced growth and linkages between industries.","m":0,"r":0},{"y":1963,"c":0,"k":"liberal","t":"Friedman and Schwartz","d":"A Monetary History of the United States: money caused the Great Depression.","m":0,"r":0},{"y":1968,"c":0,"k":"liberal","t":"Friedman, natural rate","d":"There is no lasting trade-off between inflation and unemployment.","m":1,"r":0},{"y":1970,"c":0,"k":"micro","t":"Akerlof","d":"The Market for Lemons: asymmetric information.","m":0,"r":0},{"y":1976,"c":0,"k":"liberal","t":"Lucas critique","d":"Rational expectations: policy changes the behaviour models rely on.","m":1,"r":0},{"y":1977,"c":0,"k":"marx","t":"Hirschman, Passions","d":"The Passions and the Interests: how commerce came to be seen as virtuous.","m":0,"r":1},{"y":1978,"c":0,"k":"marx","t":"Kindleberger","d":"Manias, Panics and Crashes: the anatomy of financial crises.","m":0,"r":1},{"y":1979,"c":0,"k":"micro","t":"Kahneman and Tversky","d":"Prospect theory: people weigh losses more than gains.","m":1,"r":0},{"y":1982,"c":0,"k":"liberal","t":"Kydland and Prescott","d":"Real business cycles: fluctuations driven by productivity shocks.","m":0,"r":0},{"y":1986,"c":0,"k":"marx","t":"Minsky","d":"Financial instability: stability breeds instability.","m":0,"r":0},{"y":1990,"c":0,"k":"neo","t":"Romer","d":"Endogenous growth: ideas and knowledge drive growth.","m":0,"r":0},{"y":1990,"c":0,"k":"marx","t":"North","d":"Institutions as the rules of the game of an economy.","m":0,"r":0},{"y":1993,"c":0,"k":"keynes","t":"Taylor rule","d":"New Keynesian monetary policy: the interest rate responds to inflation and output.","m":0,"r":0},{"y":1999,"c":0,"k":"dev","t":"Sen","d":"Development as Freedom: development as the expansion of capabilities.","m":1,"r":1},{"y":1999,"c":0,"k":"dev","t":"Bejarano","d":"The new domains of economic science, from Colombia.","m":0,"r":1},{"y":2012,"c":0,"k":"marx","t":"Acemoglu and Robinson","d":"Why Nations Fail: inclusive institutions explain prosperity.","m":0,"r":0},{"y":2013,"c":0,"k":"marx","t":"Piketty","d":"Capital in the Twenty-First Century: when r > g, inequality grows.","m":1,"r":0}]}</script>
+    </div>
+
+    <h2>Reading</h2>
+    <ul class="dash read">
+      <li><b>Free trade against protection is the oldest open debate:</b> Mun (1664) and Smith (1776), then Hamilton (1791), List (1841) and Prebisch (1950) return to it with the problem of the countries that arrive late to industry.</li>
+      <li><b>Crises create schools:</b> the Great Depression produced Keynes's General Theory (1936); the inflation of the 1970s gave weight to Friedman and Lucas; financial crises brought back Kindleberger and Minsky.</li>
+      <li><b>The same question about growth, answered four times:</b> the division of labour (Smith), increasing returns (Young), technology (Solow) and ideas and institutions (Romer, North, Acemoglu).</li>
+      <li><b>Latin America and Colombia take part:</b> ECLAC with Prebisch, Lauchlin Currie's mission to Colombia (1949) and Bejarano's reflection on the new domains of economics.</li>
+    </ul>
+    <p class="calc" style="margin-top:14px">A timeline of 63 points is a selection, not a complete history of economic thought. Dates are those of the main publication of each work; Mun's book was written around 1630 and published in 1664.</p>
+
+    <h2>Files</h2>
+    <p class="files">
+      <a href="History/2.%20Economic%20Thought%20Timeline/Economic%20Thought%20Milestones.csv" download>Economic Thought Milestones.csv</a>
+    </p>
+  </section>
 </main>
 </div>
 
@@ -1387,6 +1438,102 @@
     chips.appendChild(all);
     draw(); fill(); show(null);
   })();
+  // Reusable timeline: one lane per category, an axis that changes scale by era, click an era to zoom.
+  function timeline(root) {
+    var D = JSON.parse(root.querySelector(".tl-data").textContent), CATS = D.cats, ERAS = D.eras, EV = D.events, NS = "http://www.w3.org/2000/svg";
+    var on = {}, zoom = -1, onlyCourse = false;
+    CATS.forEach(function (c) { on[c.key] = true; });
+    var chart = root.querySelector(".tl-chart"), detail = root.querySelector(".tl-detail"), list = root.querySelector(".tl-list"), chips = root.querySelector(".chips"), count = root.querySelector(".tl-count");
+    function el(tag, attrs, text) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; return e; }
+    function yr(y, approx) { return (approx ? "c. " : "") + (y < 0 ? (-y).toLocaleString("en-US") + " BCE" : y + " CE"); }
+    function tick(y) { return y < 0 ? -y + " BCE" : (y < 1000 ? y + " CE" : String(y)); }
+    function cat(k) { return CATS.filter(function (c) { return c.key === k; })[0]; }
+    function eraOf(y) { for (var i = ERAS.length - 1; i >= 0; i--) if (y >= ERAS[i].a) return i; return 0; }
+    function visible(e) { return on[e.k] && (!onlyCourse || e.r); }
+    function show(e) {
+      detail.innerHTML = e ? "<span>" + yr(e.y, e.c) + " · " + cat(e.k).label + " · " + ERAS[eraOf(e.y)].name + (e.r ? " · " + D.courseLabel : "") + "</span><b>" + e.t + ".</b> " + e.d
+        : "<span>Move the pointer over a point, or tap it, to read it.</span>Click an era name to zoom into it.";
+    }
+    function draw() {
+      var W = 980, L = 196, R = 14, T = 46, laneH = 52, B = 30, Hh = T + CATS.length * laneH + B, PW = W - L - R;
+      var eras = zoom < 0 ? ERAS : [ERAS[zoom]], ew = PW / eras.length;
+      function X(y) { for (var i = eras.length - 1; i >= 0; i--) if (y >= eras[i].a || i === 0) return L + i * ew + (y - eras[i].a) / (eras[i].b - eras[i].a) * ew; }
+      var svg = el("svg", { viewBox: "0 0 " + W + " " + Hh, role: "img", "aria-label": D.title });
+      eras.forEach(function (er, i) {
+        var g = el("g", { "class": "era", tabindex: 0, role: "button", "aria-label": (zoom < 0 ? "Zoom into " : "Zoom out from ") + er.name });
+        g.appendChild(el("rect", { x: L + i * ew, y: 0, width: ew, height: Hh - B, fill: i % 2 ? "#101010" : "#161616" }));
+        g.appendChild(el("text", { x: L + i * ew + ew / 2, y: 17, "font-size": 12.5, fill: "var(--bright)", "text-anchor": "middle" }, er.name));
+        g.appendChild(el("text", { x: L + i * ew + ew / 2, y: 33, "font-size": 10.5, fill: "var(--muted)", "text-anchor": "middle" }, zoom < 0 ? "click to zoom" : "click to see all"));
+        function go() { zoom = zoom < 0 ? ERAS.indexOf(er) : -1; draw(); fill(); }
+        g.addEventListener("click", go); g.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); go(); } });
+        svg.appendChild(g);
+        svg.appendChild(el("text", { x: L + i * ew + 2, y: Hh - 10, "font-size": 10.5, fill: "var(--muted)" }, tick(er.a)));
+      });
+      svg.appendChild(el("text", { x: W - R, y: Hh - 10, "font-size": 10.5, fill: "var(--muted)", "text-anchor": "end" }, tick(eras[eras.length - 1].b - (zoom < 0 || zoom === ERAS.length - 1 ? 1 : 0))));
+      if (zoom >= 0) {
+        var er = ERAS[zoom], span = er.b - er.a, step = [10, 20, 25, 50, 100, 200, 250, 500].filter(function (s) { return span / s <= 9; })[0];
+        for (var t = Math.ceil((er.a + step * 0.45) / step) * step; t < er.b - step * 0.45; t += step) {
+          svg.appendChild(el("line", { x1: X(t), x2: X(t), y1: T, y2: Hh - B, stroke: "var(--line)" }));
+          svg.appendChild(el("text", { x: X(t), y: Hh - 10, "font-size": 10.5, fill: "var(--muted)", "text-anchor": "middle" }, tick(t)));
+        }
+      }
+      CATS.forEach(function (c, r) {
+        var cy = T + r * laneH + laneH / 2, act = on[c.key];
+        svg.appendChild(el("line", { x1: L, x2: W - R, y1: cy, y2: cy, stroke: "var(--line)" }));
+        svg.appendChild(el("circle", { cx: 8, cy: cy, r: 4.5, fill: c.color, opacity: act ? 1 : 0.25 }));
+        svg.appendChild(el("text", { x: 20, y: cy + 4, "font-size": 11.5, fill: act ? "var(--ink)" : "var(--muted)" }, c.label));
+        if (!act) return;
+        var evs = EV.filter(function (e) { return e.k === c.key && visible(e) && (zoom < 0 || eraOf(e.y) === zoom); });
+        var rows = [[], []];
+        evs.forEach(function (e) {
+          var x = X(e.y), d = el("circle", { "class": "dot", cx: x, cy: cy, r: 5.5, fill: c.color, stroke: e.r ? "var(--bright)" : "#0a0a0a", "stroke-width": e.r ? 2.5 : 2, tabindex: 0 });
+          d.appendChild(el("title", {}, yr(e.y, e.c) + ": " + e.t));
+          function pick() { show(e); }
+          d.addEventListener("mouseenter", pick); d.addEventListener("click", pick); d.addEventListener("focus", pick);
+          e._x = x; e._d = d;
+        });
+        evs.filter(function (e) { return zoom >= 0 || e.m; }).forEach(function (e) {
+          var w = e.t.length * 6.7 + 10, x0 = Math.max(L + 2, Math.min(W - R - w, e._x - w / 2));
+          for (var k = 0; k < 2; k++) {
+            if (rows[k].every(function (iv) { return x0 > iv[1] || x0 + w < iv[0]; })) {
+              rows[k].push([x0, x0 + w]);
+              svg.appendChild(el("text", { x: x0 + w / 2, y: cy + (k ? 21 : -11), "font-size": 11, fill: "var(--ink)", "text-anchor": "middle" }, e.t));
+              return;
+            }
+          }
+        });
+        evs.forEach(function (e) { svg.appendChild(e._d); });
+      });
+      chart.innerHTML = ""; chart.appendChild(svg);
+    }
+    function fill() {
+      var html = "", shown = 0;
+      ERAS.forEach(function (er, i) {
+        if (zoom >= 0 && zoom !== i) return;
+        var evs = EV.filter(function (e) { return eraOf(e.y) === i && visible(e); });
+        if (!evs.length) return;
+        shown += evs.length;
+        html += "<h4>" + er.name + " · " + tick(er.a) + " to " + (i === ERAS.length - 1 ? "today" : tick(er.b)) + "</h4>";
+        evs.forEach(function (e) { html += '<div class="tl-row"><time>' + yr(e.y, e.c) + '</time><i style="background:' + cat(e.k).color + '"></i><div><b>' + e.t + ".</b> <span>" + e.d + (e.r ? ' <em>' + D.courseLabel + '</em>' : "") + "</span></div></div>"; });
+      });
+      list.innerHTML = html || "<p>Nothing for this selection.</p>";
+      count.textContent = shown + " of " + EV.length + " " + D.noun + (zoom >= 0 ? ", " + ERAS[zoom].name : "");
+    }
+    function chip(label, color, onClick) {
+      var b = document.createElement("button"); b.className = "chip"; b.type = "button"; b.setAttribute("aria-pressed", "true");
+      b.innerHTML = (color ? '<i style="background:' + color + '"></i>' : "") + label;
+      b.addEventListener("click", function () { onClick(b); draw(); fill(); });
+      chips.appendChild(b); return b;
+    }
+    CATS.forEach(function (c) { chip(c.label, c.color, function (b) { on[c.key] = !on[c.key]; b.setAttribute("aria-pressed", on[c.key]); }); });
+    if (D.courseLabel) { var cb = chip(D.courseFilter, null, function (b) { onlyCourse = !onlyCourse; b.setAttribute("aria-pressed", onlyCourse); }); cb.classList.add("ring"); cb.setAttribute("aria-pressed", "false"); }
+    var all = document.createElement("button"); all.className = "chip reset"; all.type = "button"; all.textContent = "Show everything";
+    all.addEventListener("click", function () { CATS.forEach(function (c) { on[c.key] = true; }); onlyCourse = false; zoom = -1;
+      chips.querySelectorAll("[aria-pressed]").forEach(function (b) { b.setAttribute("aria-pressed", b.classList.contains("ring") ? "false" : "true"); }); draw(); fill(); show(null); });
+    chips.appendChild(all);
+    draw(); fill(); show(null);
+  }
+  document.querySelectorAll(".tl").forEach(timeline);
   window.addEventListener("hashchange", show);
   show(null);
 </script>

@@ -88,3 +88,13 @@ An interactive timeline of 101 milestones from 3500 BCE to today, in seven categ
 | [World History Milestones.csv](<History/1. World History Timeline/World History Milestones.csv>) | Year, date, era, category, keyword and one-sentence summary of each milestone |
 
 The selection and wording are the author's own.
+
+### 2. Economic Thought Timeline
+
+63 economists, theories and doctrines from Aristotle to today, in nine schools of thought, on an interactive timeline. Points with a white ring are texts read in my Economic Doctrines course.
+
+| File | Contents |
+|---|---|
+| [Economic Thought Milestones.csv](<History/2. Economic Thought Timeline/Economic Thought Milestones.csv>) | Year, period, school, author or work, central idea, and whether it was a course reading |
+
+The selection and wording are the author's own.

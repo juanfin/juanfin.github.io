@@ -1,0 +1,64 @@
+﻿year,approximate,period,school,author or work,central idea,read in my course
+-350,yes,Before 1500,Before economics,Aristotle,Separates household management from money-making and distinguishes use value from exchange value.,no
+1270,yes,Before 1500,Before economics,Aquinas,The just price and the condemnation of usury in scholastic thought.,no
+1377,no,Before 1500,Before economics,Ibn Khaldun,"The Muqaddimah links the division of labour, taxes and the rise and fall of states.",no
+1556,no,Mercantilism,Before economics,School of Salamanca,Azpilcueta explains that American silver lowers the value of money: an early quantity theory.,no
+1568,no,Mercantilism,Mercantilists and physiocrats,Bodin,Attributes the rise in European prices to the inflow of gold and silver.,no
+1662,no,Mercantilism,Mercantilists and physiocrats,Petty,Treatise of Taxes: measurement and political arithmetic.,no
+1664,no,Mercantilism,Mercantilists and physiocrats,Mun,England's Treasure by Foreign Trade: wealth comes from a trade surplus.,no
+1665,no,Mercantilism,Mercantilists and physiocrats,Colbert,State-led industry and trade policy in France.,no
+1752,no,Classical,Mercantilists and physiocrats,Hume,The price-specie flow: a trade surplus raises prices and corrects itself.,no
+1755,no,Classical,Mercantilists and physiocrats,Cantillon,The entrepreneur bears uncertainty; new money changes relative prices.,no
+1758,no,Classical,Mercantilists and physiocrats,Quesnay,The Tableau economique: the first model of the circular flow of income.,no
+1776,no,Classical,Classical school,Smith,"The Wealth of Nations: division of labour, the invisible hand and free trade.",yes
+1791,no,Classical,Development economics,Hamilton,Report on Manufactures: protection for infant industries.,yes
+1798,no,Classical,Classical school,Malthus,Population grows faster than the means of subsistence.,no
+1803,no,Classical,Classical school,Say,Supply creates its own demand: general gluts are impossible.,no
+1817,no,Classical,Classical school,Ricardo,Comparative advantage and the theory of rent.,no
+1841,no,Classical,Development economics,List,The National System: industrialize behind tariffs before opening to trade.,no
+1848,no,Classical,Classical school,J. S. Mill,"Principles of Political Economy: the classical synthesis, money and credit cycles.",yes
+1848,no,Classical,Marxian and institutional,Communist Manifesto,Marx and Engels: class struggle as the engine of history.,yes
+1859,no,Classical,Marxian and institutional,"Marx, Critique",The economic base conditions the political and legal superstructure.,yes
+1867,no,Classical,Marxian and institutional,"Marx, Capital","Surplus value, accumulation and the crises of capitalism.",no
+1871,no,Neoclassical,Marginalist and neoclassical,Jevons and Menger,The marginal revolution: value comes from marginal utility.,no
+1874,no,Neoclassical,Marginalist and neoclassical,Walras,General equilibrium: all markets clear at once.,no
+1890,no,Neoclassical,Marginalist and neoclassical,Marshall,"Principles of Economics: supply, demand and partial equilibrium.",no
+1899,no,Neoclassical,Marxian and institutional,Veblen,The Theory of the Leisure Class: conspicuous consumption; institutional economics.,no
+1906,no,Neoclassical,Marginalist and neoclassical,Pareto,Pareto efficiency: no one can gain without someone losing.,no
+1911,no,Neoclassical,Marginalist and neoclassical,Fisher,The equation of exchange: MV = PT.,no
+1911,no,Neoclassical,Marxian and institutional,"Schumpeter, Development",The entrepreneur and innovation drive economic development.,no
+1928,no,Neoclassical,Marginalist and neoclassical,Allyn Young,Increasing returns and economic progress.,yes
+1930,no,Neoclassical,Keynesian,"Keynes, Grandchildren",Economic Possibilities for our Grandchildren: growth could solve the economic problem.,yes
+1932,no,Neoclassical,Marginalist and neoclassical,Robbins,Economics as the allocation of scarce means between alternative ends.,yes
+1933,no,Neoclassical,Marginalist and neoclassical,Joan Robinson,Imperfect competition between the extremes of monopoly and competition.,no
+1936,no,Keynesian era,Keynesian,"Keynes, General Theory",Effective demand: unemployment can persist; the state should stabilize demand.,yes
+1937,no,Keynesian era,Keynesian,"Hicks, IS-LM","The Keynesian model in two curves, the standard of macroeconomics teaching.",no
+1942,no,Keynesian era,Marxian and institutional,"Schumpeter, Capitalism","Capitalism, Socialism and Democracy: creative destruction.",yes
+1944,no,Keynesian era,"Games, information, behaviour",Game theory,Von Neumann and Morgenstern: the theory of games and economic behaviour.,no
+1945,no,Keynesian era,"Austrian, monetarist, new classical",Hayek,The Use of Knowledge in Society: prices carry dispersed information.,no
+1948,no,Keynesian era,Keynesian,Samuelson,Economics: the neoclassical synthesis of Keynes and the market.,no
+1949,no,Keynesian era,Development economics,Currie in Colombia,"Lauchlin Currie leads the first World Bank mission, to Colombia.",no
+1950,no,Keynesian era,Development economics,Prebisch,ECLAC: falling terms of trade justify industrialization in Latin America.,no
+1950,no,Keynesian era,"Games, information, behaviour",Nash,The Nash equilibrium in non-cooperative games.,no
+1950,no,Keynesian era,Marginalist and neoclassical,Viner,The Customs Union Issue: trade creation and trade diversion.,yes
+1953,no,Keynesian era,"Austrian, monetarist, new classical","Friedman, Method",The Methodology of Positive Economics: judge theories by their predictions.,yes
+1954,no,Keynesian era,Development economics,Lewis,Development with unlimited supplies of labour: the dual economy.,yes
+1956,no,Keynesian era,Keynesian,Solow,The growth model: technology explains long-run growth.,no
+1958,no,Keynesian era,Keynesian,Phillips curve,Lower unemployment goes with faster wage inflation.,no
+1958,no,Keynesian era,Development economics,"Hirschman, Strategy",Unbalanced growth and linkages between industries.,no
+1963,no,Keynesian era,"Austrian, monetarist, new classical",Friedman and Schwartz,A Monetary History of the United States: money caused the Great Depression.,no
+1968,no,Keynesian era,"Austrian, monetarist, new classical","Friedman, natural rate",There is no lasting trade-off between inflation and unemployment.,no
+1970,no,Contemporary,"Games, information, behaviour",Akerlof,The Market for Lemons: asymmetric information.,no
+1976,no,Contemporary,"Austrian, monetarist, new classical",Lucas critique,Rational expectations: policy changes the behaviour models rely on.,no
+1977,no,Contemporary,Marxian and institutional,"Hirschman, Passions",The Passions and the Interests: how commerce came to be seen as virtuous.,yes
+1978,no,Contemporary,Marxian and institutional,Kindleberger,"Manias, Panics and Crashes: the anatomy of financial crises.",yes
+1979,no,Contemporary,"Games, information, behaviour",Kahneman and Tversky,Prospect theory: people weigh losses more than gains.,no
+1982,no,Contemporary,"Austrian, monetarist, new classical",Kydland and Prescott,Real business cycles: fluctuations driven by productivity shocks.,no
+1986,no,Contemporary,Marxian and institutional,Minsky,Financial instability: stability breeds instability.,no
+1990,no,Contemporary,Marginalist and neoclassical,Romer,Endogenous growth: ideas and knowledge drive growth.,no
+1990,no,Contemporary,Marxian and institutional,North,Institutions as the rules of the game of an economy.,no
+1993,no,Contemporary,Keynesian,Taylor rule,New Keynesian monetary policy: the interest rate responds to inflation and output.,no
+1999,no,Contemporary,Development economics,Sen,Development as Freedom: development as the expansion of capabilities.,yes
+1999,no,Contemporary,Development economics,Bejarano,"The new domains of economic science, from Colombia.",yes
+2012,no,Contemporary,Marxian and institutional,Acemoglu and Robinson,Why Nations Fail: inclusive institutions explain prosperity.,no
+2013,no,Contemporary,Marxian and institutional,Piketty,"Capital in the Twenty-First Century: when r > g, inequality grows.",no
